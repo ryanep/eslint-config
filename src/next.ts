@@ -1,28 +1,34 @@
-import { type Linter } from "eslint";
+import type { Linter } from "eslint";
 
-const next: Linter.Config = {
-  plugins: ["@next/next"],
-  rules: {
-    "@next/next/google-font-display": 1,
-    "@next/next/google-font-preconnect": 1,
-    "@next/next/inline-script-id": 2,
-    "@next/next/link-passhref": 1,
-    "@next/next/next-script-for-ga": 1,
-    "@next/next/no-css-tags": 1,
-    "@next/next/no-document-import-in-page": 2,
-    "@next/next/no-duplicate-head": 2,
-    "@next/next/no-head-import-in-document": 2,
-    "@next/next/no-html-link-for-pages": 1,
-    "@next/next/no-img-element": 1,
-    "@next/next/no-page-custom-font": 1,
-    "@next/next/no-script-in-document": 2,
-    "@next/next/no-script-in-head": 2,
-    "@next/next/no-server-import-in-page": 2,
-    "@next/next/no-sync-scripts": 1,
-    "@next/next/no-title-in-document-head": 1,
-    "@next/next/no-typos": 1,
-    "@next/next/no-unwanted-polyfillio": 1,
-  },
+const config: Linter.Config = {
+  overrides: [
+    {
+      plugins: ["@next/next"],
+      files: ["**/*.ts?(x)"],
+      rules: {
+        "@next/next/google-font-display": "warn",
+        "@next/next/google-font-preconnect": "warn",
+        "@next/next/next-script-for-ga": "warn",
+        "@next/next/no-before-interactive-script-outside-document": "warn",
+        "@next/next/no-css-tags": "warn",
+        "@next/next/no-head-element": "warn",
+        "@next/next/no-html-link-for-pages": "warn",
+        "@next/next/no-img-element": "warn",
+        "@next/next/no-page-custom-font": "warn",
+        "@next/next/no-styled-jsx-in-document": "warn",
+        "@next/next/no-sync-scripts": "warn",
+        "@next/next/no-title-in-document-head": "warn",
+        "@next/next/no-typos": "warn",
+        "@next/next/no-unwanted-polyfillio": "warn",
+        "@next/next/inline-script-id": "error",
+        "@next/next/no-assign-module-variable": "error",
+        "@next/next/no-document-import-in-page": "error",
+        "@next/next/no-duplicate-head": "error",
+        "@next/next/no-head-import-in-document": "error",
+        "@next/next/no-script-component-in-head": "error",
+      },
+    },
+  ],
 };
 
-export = next;
+export = config;

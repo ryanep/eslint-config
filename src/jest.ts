@@ -1,65 +1,77 @@
-import { type Linter } from "eslint";
+import type { Linter } from "eslint";
 
-const jest: Linter.Config = {
-  env: {
-    "jest/globals": true,
-  },
-  plugins: ["jest"],
-  rules: {
-    "jest/consistent-test-it": 2,
-    "jest/expect-expect": 2,
-    "jest/max-nested-describe": [
-      2,
-      {
-        max: 5,
+const config: Linter.Config = {
+  overrides: [
+    {
+      env: {
+        "jest/globals": true,
       },
-    ],
-    "jest/no-alias-methods": 2,
-    "jest/no-commented-out-tests": 2,
-    "jest/no-conditional-expect": 2,
-    "jest/no-deprecated-functions": 2,
-    "jest/no-disabled-tests": 1,
-    "jest/no-done-callback": 2,
-    "jest/no-duplicate-hooks": 2,
-    "jest/no-export": 2,
-    "jest/no-focused-tests": 2,
-    "jest/no-hooks": 0,
-    "jest/no-identical-title": 2,
-    "jest/no-if": 2,
-    "jest/no-interpolation-in-snapshots": 2,
-    "jest/no-jasmine-globals": 2,
-    "jest/no-jest-import": 2,
-    "jest/no-large-snapshots": 0,
-    "jest/no-mocks-import": 2,
-    "jest/no-restricted-matchers": 0,
-    "jest/no-standalone-expect": 2,
-    "jest/no-test-prefixes": 2,
-    "jest/no-test-return-statement": 2,
-    "jest/prefer-called-with": 2,
-    "jest/prefer-expect-assertions": [
-      2,
-      {
-        onlyFunctionsWithAsyncKeyword: true,
+      settings: {
+        "jest": {
+          version: "latest",
+        },
+        "import/resolver": {
+          typescript: true,
+        },
       },
-    ],
-    "jest/prefer-expect-resolves": 2,
-    "jest/prefer-hooks-on-top": 2,
-    "jest/prefer-lowercase-title": 0,
-    "jest/prefer-spy-on": 2,
-    "jest/prefer-strict-equal": 0,
-    "jest/prefer-to-be": 2,
-    "jest/prefer-to-contain": 2,
-    "jest/prefer-to-have-length": 2,
-    "jest/prefer-todo": 2,
-    "jest/require-hook": 0,
-    "jest/require-to-throw-message": 2,
-    "jest/require-top-level-describe": 2,
-    "jest/unbound-method": 0,
-    "jest/valid-describe-callback": 2,
-    "jest/valid-expect": 2,
-    "jest/valid-expect-in-promise": 2,
-    "jest/valid-title": 2,
-  },
+      plugins: ["jest"],
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      rules: {
+        "jest/consistent-test-it": "error",
+        "jest/expect-expect": "error",
+        "jest/max-nested-describe": [
+          "error",
+          {
+            max: 5,
+          },
+        ],
+        "jest/no-alias-methods": "error",
+        "jest/no-commented-out-tests": "error",
+        "jest/no-conditional-expect": "error",
+        "jest/no-deprecated-functions": "error",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-done-callback": "error",
+        "jest/no-duplicate-hooks": "error",
+        "jest/no-export": "error",
+        "jest/no-focused-tests": "error",
+        "jest/no-hooks": "off",
+        "jest/no-identical-title": "error",
+        "jest/no-if": "error",
+        "jest/no-interpolation-in-snapshots": "error",
+        "jest/no-jasmine-globals": "error",
+        "jest/no-large-snapshots": "off",
+        "jest/no-mocks-import": "error",
+        "jest/no-restricted-matchers": "off",
+        "jest/no-standalone-expect": "error",
+        "jest/no-test-prefixes": "error",
+        "jest/no-test-return-statement": "error",
+        "jest/prefer-called-with": "error",
+        "jest/prefer-expect-assertions": [
+          "error",
+          {
+            onlyFunctionsWithAsyncKeyword: true,
+          },
+        ],
+        "jest/prefer-expect-resolves": "error",
+        "jest/prefer-hooks-on-top": "error",
+        "jest/prefer-lowercase-title": "off",
+        "jest/prefer-spy-on": "error",
+        "jest/prefer-strict-equal": "off",
+        "jest/prefer-to-be": "error",
+        "jest/prefer-to-contain": "error",
+        "jest/prefer-to-have-length": "error",
+        "jest/prefer-todo": "error",
+        "jest/require-hook": "off",
+        "jest/require-to-throw-message": "error",
+        "jest/require-top-level-describe": "error",
+        "jest/unbound-method": "off",
+        "jest/valid-describe-callback": "error",
+        "jest/valid-expect": "error",
+        "jest/valid-expect-in-promise": "error",
+        "jest/valid-title": "error",
+      },
+    },
+  ],
 };
 
-export = jest;
+export = config;

@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "outDir": "lib",
+    "outDir": "./",
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
     "target": "es5"
   },
   "exclude": ["node_modules"],

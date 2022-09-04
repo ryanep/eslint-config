@@ -1,17 +1,17 @@
 import { readdir, unlink } from "node:fs/promises";
 import path from "node:path";
 
-const libraryPath = "./lib";
+const libraryPath = "./src";
 const basePath = "./";
 
 const main = async () => {
   const files = await readdir(libraryPath);
 
-  files.forEach(async (file) => {
-    const filePath = path.join(basePath, file);
+  for (const file of files) {
+    const filePath = path.join(basePath, file.replace(".ts", ".js"));
 
     await unlink(filePath);
-  });
+  }
 };
 
 main().catch(console.error);
