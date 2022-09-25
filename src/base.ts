@@ -10,6 +10,7 @@ const config: Linter.Config = {
       env: {
         es6: true,
         node: true,
+        browser: true,
       },
       files: ["**/*.[jt]s?(x)"],
       plugins: ["import", "unicorn"],
@@ -107,7 +108,18 @@ const config: Linter.Config = {
         ],
         "import/prefer-default-export": "off",
         "import/no-named-as-default": "error",
-        "import/extensions": "error",
+        "import/extensions": [
+          "error",
+          "never",
+          {
+            pattern: {
+              json: "always",
+              css: "always",
+              scss: "always",
+              svg: "always",
+            },
+          },
+        ],
         "import/no-unresolved": "error",
         "import/no-extraneous-dependencies": "off",
         "import/newline-after-import": "error",
@@ -144,7 +156,7 @@ const config: Linter.Config = {
         "unicorn/no-lonely-if": "error",
         "no-nested-ternary": "off",
         "unicorn/no-nested-ternary": "error",
-        "unicorn/no-new-array": "error",
+        "unicorn/no-new-array": "off",
         "unicorn/no-new-buffer": "error",
         "unicorn/no-null": "error",
         "unicorn/no-object-as-default-parameter": "error",
