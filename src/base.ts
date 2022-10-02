@@ -227,6 +227,8 @@ const config: Linter.Config = {
             allowList: {
               Props: true,
               props: true,
+              Args: true,
+              args: true,
             },
           },
         ],
