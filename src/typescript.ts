@@ -13,6 +13,7 @@ const config: Linter.Config = {
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/ban-ts-comment": "error",
         "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-array-constructor": "error",
         "@typescript-eslint/no-empty-function": "error",
         "@typescript-eslint/no-empty-interface": "error",
