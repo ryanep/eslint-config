@@ -84,6 +84,7 @@ const config: Linter.Config = {
         "require-yield": "error",
         "use-isnan": "error",
         "valid-typeof": "error",
+        "sort-keys": ["error", "asc", { natural: false }],
 
         // eslint-plugin-import
         "import/order": [
