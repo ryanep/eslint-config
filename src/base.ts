@@ -97,6 +97,8 @@ const config: Linter.Config = {
               "parent",
               "sibling",
               "index",
+              "object",
+              "type",
             ],
             alphabetize: {
               order: "asc",
