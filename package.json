@@ -26,8 +26,8 @@
     "dev": "nodemon",
     "generate": "node -r ts-node/register ./scripts/generate",
     "clean": "node -r ts-node/register ./scripts/clean",
-    "lint": "eslint './src/**/*.{ts,json}'",
-    "build": "tsc",
+    "lint": "eslint './**/*.{ts,json}'",
+    "build": "tsc --project tsconfig.build.json",
     "fmt": "prettier --write ."
   },
   "dependencies": {
