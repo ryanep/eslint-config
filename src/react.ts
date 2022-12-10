@@ -198,6 +198,8 @@ const config: Linter.Config = {
         "react/static-property-placement": "error",
         "react/style-prop-object": "error",
         "react/void-dom-elements-no-children": "error",
+
+        // react-hooks
         "react-hooks/exhaustive-deps": "error",
         "react-hooks/rules-of-hooks": "error",
 

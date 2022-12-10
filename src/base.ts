@@ -13,7 +13,7 @@ const config: Linter.Config = {
         browser: true,
       },
       files: ["**/*.[jt]s?(x)"],
-      plugins: ["import", "unicorn"],
+      plugins: ["import", "unicorn", "sort-destructure-keys"],
       settings: {
         "import/resolver": {
           typescript: true,
@@ -129,6 +129,9 @@ const config: Linter.Config = {
         "import/no-unresolved": "error",
         "import/no-extraneous-dependencies": "off",
         "import/newline-after-import": "error",
+
+        // sort-destructure-keys
+        "sort-destructure-keys/sort-destructure-keys": "error",
 
         // eslint-plugin-unicorn
         "unicorn/better-regex": "error",
