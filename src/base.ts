@@ -85,8 +85,10 @@ const config: Linter.Config = {
         "sort-keys": ["error", "asc", { natural: false }],
         "use-isnan": "error",
         "valid-typeof": "error",
+        "yoda": "error",
 
         // eslint-plugin-import
+        "import/export": "error",
         "import/extensions": [
           "error",
           "never",
@@ -99,6 +101,9 @@ const config: Linter.Config = {
             },
           },
         ],
+        "import/no-deprecated": "error",
+        "import/no-empty-named-blocks": "error",
+        "import/no-mutable-exports": "error",
         "import/no-named-as-default": "error",
         "import/order": [
           "error",
