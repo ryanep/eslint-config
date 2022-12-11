@@ -21,11 +21,10 @@ const config: Linter.Config = {
       },
       rules: {
         "constructor-super": "error",
-        "for-direction": "error",
-        "getter-return": "error",
-        "object-shorthand": "error",
         "default-case": "error",
+        "for-direction": "error",
         "func-names": "error",
+        "getter-return": "error",
         "no-async-promise-executor": "error",
         "no-case-declarations": "error",
         "no-class-assign": "error",
@@ -41,9 +40,9 @@ const config: Linter.Config = {
         "no-dupe-else-if": "error",
         "no-dupe-keys": "error",
         "no-duplicate-case": "error",
-        "no-empty": "error",
         "no-empty-character-class": "error",
         "no-empty-pattern": "error",
+        "no-empty": "error",
         "no-ex-assign": "error",
         "no-extra-boolean-cast": "error",
         "no-extra-semi": "error",
@@ -81,12 +80,26 @@ const config: Linter.Config = {
         "no-useless-catch": "error",
         "no-useless-escape": "error",
         "no-with": "error",
+        "object-shorthand": "error",
         "require-yield": "error",
+        "sort-keys": ["error", "asc", { natural: false }],
         "use-isnan": "error",
         "valid-typeof": "error",
-        "sort-keys": ["error", "asc", { natural: false }],
 
         // eslint-plugin-import
+        "import/extensions": [
+          "error",
+          "never",
+          {
+            pattern: {
+              json: "always",
+              css: "always",
+              scss: "always",
+              svg: "always",
+            },
+          },
+        ],
+        "import/no-named-as-default": "error",
         "import/order": [
           "error",
           {
@@ -113,27 +126,15 @@ const config: Linter.Config = {
           },
         ],
         "import/prefer-default-export": "off",
-        "import/no-named-as-default": "error",
-        "import/extensions": [
-          "error",
-          "never",
-          {
-            pattern: {
-              json: "always",
-              css: "always",
-              scss: "always",
-              svg: "always",
-            },
-          },
-        ],
-        "import/no-unresolved": "error",
-        "import/no-extraneous-dependencies": "off",
         "import/newline-after-import": "error",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "error",
 
         // sort-destructure-keys
         "sort-destructure-keys/sort-destructure-keys": "error",
 
         // eslint-plugin-unicorn
+        "no-nested-ternary": "off",
         "unicorn/better-regex": "error",
         "unicorn/catch-error-name": "error",
         "unicorn/consistent-destructuring": "error",
@@ -163,7 +164,6 @@ const config: Linter.Config = {
         "unicorn/no-invalid-remove-event-listener": "error",
         "unicorn/no-keyword-prefix": "off",
         "unicorn/no-lonely-if": "error",
-        "no-nested-ternary": "off",
         "unicorn/no-nested-ternary": "error",
         "unicorn/no-new-array": "off",
         "unicorn/no-new-buffer": "error",
@@ -188,8 +188,8 @@ const config: Linter.Config = {
         "unicorn/numeric-separators-style": "error",
         "unicorn/prefer-add-event-listener": "error",
         "unicorn/prefer-array-find": "error",
-        "unicorn/prefer-array-flat": "error",
         "unicorn/prefer-array-flat-map": "error",
+        "unicorn/prefer-array-flat": "error",
         "unicorn/prefer-array-index-of": "error",
         "unicorn/prefer-array-some": "error",
         "unicorn/prefer-at": "error",
