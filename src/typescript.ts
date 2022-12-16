@@ -54,6 +54,7 @@ const config: Linter.Config = {
         "no-extra-semi": "off",
         "no-implied-eval": "off",
         "no-loss-of-precision": "off",
+        "no-undef": "off",
         "no-unused-vars": "off",
         "require-await": "off",
       },
