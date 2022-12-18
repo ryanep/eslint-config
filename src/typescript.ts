@@ -31,6 +31,17 @@ const config: Linter.Config = {
         "@typescript-eslint/no-namespace": "error",
         "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
         "@typescript-eslint/no-non-null-assertion": "warn",
+        "@typescript-eslint/no-restricted-imports": [
+          "error",
+          {
+            patterns: [
+              "**/components/**/*",
+              "**/containers/**/*",
+              "!**/components/*",
+              "!**/containers/*",
+            ],
+          },
+        ],
         "@typescript-eslint/no-this-alias": "error",
         "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/no-unnecessary-type-constraint": "error",
@@ -54,6 +65,7 @@ const config: Linter.Config = {
         "no-extra-semi": "off",
         "no-implied-eval": "off",
         "no-loss-of-precision": "off",
+        "no-restricted-imports": "off",
         "no-undef": "off",
         "no-unused-vars": "off",
         "require-await": "off",
