@@ -102,7 +102,6 @@ const config: Linter.Config = {
           },
         ],
         "import/no-deprecated": "error",
-        "import/no-empty-named-blocks": "error",
         "import/no-mutable-exports": "error",
         "import/no-named-as-default": "error",
         "import/order": [
