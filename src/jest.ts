@@ -6,16 +6,8 @@ const config: Linter.Config = {
       env: {
         "jest/globals": true,
       },
-      settings: {
-        "jest": {
-          version: "latest",
-        },
-        "import/resolver": {
-          typescript: true,
-        },
-      },
-      plugins: ["jest"],
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      plugins: ["jest"],
       rules: {
         "jest/consistent-test-it": "error",
         "jest/expect-expect": "error",
@@ -66,12 +58,20 @@ const config: Linter.Config = {
         "jest/require-top-level-describe": "error",
         "jest/unbound-method": "off",
         "jest/valid-describe-callback": "error",
-        "jest/valid-expect-in-promise": "error",
         "jest/valid-expect": "error",
+        "jest/valid-expect-in-promise": "error",
         "jest/valid-title": "error",
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      typescript: true,
+    },
+    "jest": {
+      version: "latest",
+    },
+  },
 };
 
 export = config;

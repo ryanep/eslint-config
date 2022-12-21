@@ -3,12 +3,12 @@ import type { Linter } from "eslint";
 const config: Linter.Config = {
   overrides: [
     {
-      plugins: ["@typescript-eslint/eslint-plugin", "typescript-sort-keys"],
       files: ["**/*.ts?(x)"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         project: ["./tsconfig.json"],
       },
+      plugins: ["@typescript-eslint/eslint-plugin", "typescript-sort-keys"],
       rules: {
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/await-thenable": "error",

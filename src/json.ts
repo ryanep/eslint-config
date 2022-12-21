@@ -3,8 +3,8 @@ import type { Linter } from "eslint";
 const config: Linter.Config = {
   overrides: [
     {
-      parser: "jsonc-eslint-parser",
       files: ["*.json", "*.json5"],
+      parser: "jsonc-eslint-parser",
       plugins: ["jsonc"],
       rules: {
         "jsonc/array-bracket-newline": [
@@ -35,9 +35,9 @@ const config: Linter.Config = {
         "jsonc/no-nan": "error",
         "jsonc/no-number-props": "error",
         "jsonc/no-numeric-separators": "error",
+        "jsonc/no-octal": "error",
         "jsonc/no-octal-escape": "error",
         "jsonc/no-octal-numeric-literals": "error",
-        "jsonc/no-octal": "error",
         "jsonc/no-parenthesized": "error",
         "jsonc/no-plus-sign": "error",
         "jsonc/no-regexp-literals": "error",

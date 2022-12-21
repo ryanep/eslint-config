@@ -3,8 +3,8 @@ import type { Linter } from "eslint";
 const config: Linter.Config = {
   overrides: [
     {
-      plugins: ["@next/next"],
       files: ["**/*.ts?(x)"],
+      plugins: ["@next/next"],
       rules: {
         "@next/next/google-font-display": "warn",
         "@next/next/google-font-preconnect": "warn",
