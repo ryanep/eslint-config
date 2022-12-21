@@ -3,7 +3,7 @@ import type { Linter } from "eslint";
 const config: Linter.Config = {
   overrides: [
     {
-      plugins: ["@typescript-eslint/eslint-plugin"],
+      plugins: ["@typescript-eslint/eslint-plugin", "typescript-sort-keys"],
       files: ["**/*.ts?(x)"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
@@ -69,6 +69,10 @@ const config: Linter.Config = {
         "no-undef": "off",
         "no-unused-vars": "off",
         "require-await": "off",
+
+        // typescript-sort-keys
+        "typescript-sort-keys/interface": "error",
+        "typescript-sort-keys/string-enum": "error",
       },
     },
   ],
