@@ -14,6 +14,7 @@ const config: Linter.Config = {
         "@typescript-eslint/await-thenable": "error",
         "@typescript-eslint/ban-ts-comment": "error",
         "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/consistent-type-exports": "error",
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-array-constructor": "error",
         "@typescript-eslint/no-empty-function": "error",
