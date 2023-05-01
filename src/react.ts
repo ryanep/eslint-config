@@ -257,7 +257,6 @@ const config: Linter.Config = {
         ],
         "react/jsx-props-no-multi-spaces": "error",
         "react/jsx-props-no-spreading": "error",
-        "react/jsx-sort-default-props": "error",
         "react/jsx-sort-props": "error",
         "react/jsx-tag-spacing": [
           "error",
@@ -314,6 +313,7 @@ const config: Linter.Config = {
         "react/require-render-return": "error",
         "react/self-closing-comp": "error",
         "react/sort-comp": "error",
+        "react/sort-default-props": "error",
         "react/sort-prop-types": "error",
         "react/state-in-constructor": ["error", "always"],
         "react/static-property-placement": "error",
