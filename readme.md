@@ -1,5 +1,5 @@
 <p align="center">
-  <img width=100 height=100 alt="Screenshot" src="docs/icon.svg">
+  <img width=100 height=100 alt="Screenshot" src="https://raw.githubusercontent.com/ryanep/eslint-config/main/docs/icon.svg">
 </p>
 <div align="center">
   <h1>@ryanep/eslint-config</h1>
