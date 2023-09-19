@@ -8,6 +8,11 @@ build:
 	NODE_ENV=production yarn build && \
 	npm run generate
 
+release-dry-run:
+	make clean && \
+	npm run build && \
+	npm pack
+
 release:
 	make clean && \
 	make build && \

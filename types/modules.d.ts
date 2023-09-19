@@ -1,0 +1,17 @@
+declare module "@next/eslint-plugin-next";
+declare module "@typescript-eslint/eslint-plugin";
+declare module "@typescript-eslint/parser";
+declare module "eslint-plugin-cypress";
+declare module "eslint-plugin-eslint-comments";
+declare module "eslint-plugin-import";
+declare module "eslint-plugin-jest";
+declare module "eslint-plugin-jsdoc";
+declare module "eslint-plugin-jsonc";
+declare module "eslint-plugin-jsx-a11y";
+declare module "eslint-plugin-react-hooks";
+declare module "eslint-plugin-react";
+declare module "eslint-plugin-sort-destructure-keys";
+declare module "eslint-plugin-tailwindcss";
+declare module "eslint-plugin-testing-library";
+declare module "eslint-plugin-typescript-sort-keys";
+declare module "eslint-plugin-unicorn";
