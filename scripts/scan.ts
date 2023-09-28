@@ -20,17 +20,16 @@ const main = async () => {
     const configKey = Object.keys(module)[0];
     const config = module[configKey];
 
-    const plugins = config.plugins ? Object.keys(config.plugins) : [];
+    const pluginNames = config.plugins ? Object.keys(config.plugins) : [];
     const rules = config.rules ? Object.keys(config.rules) : [];
 
     rules.forEach((rule) => setRules.add(rule));
 
-    for (const plugin of plugins) {
-      // @ts-expect-error -- Fix types
-      const pluginRules = Object.keys(config.plugins[plugin].rules);
+    for (const pluginName of pluginNames) {
+      const pluginRules = Object.keys(config.plugins?.[pluginName].rules ?? {});
 
       for (const pluginRule of pluginRules) {
-        const fullRuleName = `${plugin}/${pluginRule}`;
+        const fullRuleName = `${pluginName}/${pluginRule}`;
 
         allRules.add(fullRuleName);
       }
@@ -39,14 +38,15 @@ const main = async () => {
 
   console.log("Total rules:", allRules.size, "Set rules:", setRules.size);
 
-  if (allRules.size !== setRules.size) {
-    const unsetRules = [...allRules].filter(
-      (rule) => ![...setRules].includes(rule)
-    );
-    const invalidRules = [...setRules].filter(
-      (rule) => ![...allRules].includes(rule)
-    );
+  const unsetRules = [...allRules].filter(
+    (rule) => ![...setRules].includes(rule)
+  );
 
+  const invalidRules = [...setRules].filter(
+    (rule) => ![...allRules].includes(rule)
+  );
+
+  if (unsetRules.length > 0 || invalidRules.length > 0) {
     console.error("Unset rules:", unsetRules);
     console.error("Invalid rules:", invalidRules);
 
