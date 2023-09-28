@@ -1,26 +1,28 @@
 {
   "name": "@ryanep/eslint-config",
-  "description": "A personal ESLint config",
   "version": "0.1.0",
-  "main": "./lib",
-  "license": "MIT",
+  "description": "A personal ESLint config",
   "keywords": [
     "eslint",
     "config",
     "ryanep"
   ],
+  "license": "MIT",
+  "main": "./lib",
   "files": [
     "readme.md",
     "lib"
   ],
   "scripts": {
-    "dev": "nodemon",
-    "generate": "node -r ts-node/register ./scripts/generate",
-    "scan": "node -r ts-node/register/transpile-only ./scripts/scan",
-    "clean": "node -r ts-node/register ./scripts/clean",
-    "lint": "eslint './**/*.{ts,json}'",
     "build": "tsc --project tsconfig.build.json",
-    "format": "prettier --write ."
+    "clean": "node -r ts-node/register ./scripts/clean",
+    "dev": "nodemon",
+    "format": "prettier --write .",
+    "generate": "node -r ts-node/register ./scripts/generate",
+    "lint": "eslint './**/*.{ts,json}'",
+    "precommit": "lint-staged",
+    "release": "semantic-release",
+    "scan": "node -r ts-node/register/transpile-only ./scripts/scan"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.22.15",
@@ -61,6 +63,8 @@
     "@types/jest": "^29.5.5",
     "@types/node": "^20.7.1",
     "eslint": "^8.50.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
     "semantic-release": "^22.0.5",

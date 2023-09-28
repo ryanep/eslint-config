@@ -2,11 +2,13 @@
 
 clean:
 	rm -rf ./*.tgz && \
-	npm run clean
+	rm -rf ./lib
 
 build:
-	NODE_ENV=production yarn build && \
-	npm run generate
+	NODE_ENV=production yarn build
+
+scan:
+	npm run scan
 
 release-dry-run:
 	make clean && \
@@ -16,5 +18,5 @@ release-dry-run:
 release:
 	make clean && \
 	make build && \
-	npm publish --access public && \
+	npm run release && \
 	make clean
