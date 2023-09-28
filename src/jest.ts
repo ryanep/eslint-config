@@ -11,19 +11,15 @@ export const jestConfig: Linter.FlatConfig = {
     globals: globals.jest,
   },
   rules: {
-    // #region jest
     "jest/consistent-test-it": "error",
     "jest/expect-expect": "error",
-    "jest/max-nested-describe": [
-      "error",
-      {
-        max: 5,
-      },
-    ],
+    "jest/max-expects": "error",
+    "jest/max-nested-describe": ["error", { max: 5 }],
     "jest/no-alias-methods": "error",
     "jest/no-commented-out-tests": "error",
     "jest/no-conditional-expect": "error",
     "jest/no-conditional-in-test": "error",
+    "jest/no-confusing-set-timeout": "error",
     "jest/no-deprecated-functions": "error",
     "jest/no-disabled-tests": "warn",
     "jest/no-done-callback": "error",
@@ -37,11 +33,16 @@ export const jestConfig: Linter.FlatConfig = {
     "jest/no-jasmine-globals": "error",
     "jest/no-large-snapshots": "off",
     "jest/no-mocks-import": "error",
+    "jest/no-restricted-jest-methods": "off",
     "jest/no-restricted-matchers": "off",
     "jest/no-standalone-expect": "error",
     "jest/no-test-prefixes": "error",
     "jest/no-test-return-statement": "error",
+    "jest/no-untyped-mock-factory": "error",
     "jest/prefer-called-with": "error",
+    "jest/prefer-comparison-matcher": "error",
+    "jest/prefer-each": "error",
+    "jest/prefer-equality-matcher": "error",
     "jest/prefer-expect-assertions": [
       "error",
       { onlyFunctionsWithAsyncKeyword: true },
@@ -50,6 +51,8 @@ export const jestConfig: Linter.FlatConfig = {
     "jest/prefer-hooks-in-order": "error",
     "jest/prefer-hooks-on-top": "error",
     "jest/prefer-lowercase-title": "error",
+    "jest/prefer-mock-promise-shorthand": "error",
+    "jest/prefer-snapshot-hint": "error",
     "jest/prefer-spy-on": "error",
     "jest/prefer-strict-equal": "error",
     "jest/prefer-to-be": "error",
@@ -61,21 +64,9 @@ export const jestConfig: Linter.FlatConfig = {
     "jest/require-top-level-describe": "error",
     "jest/unbound-method": "error",
     "jest/valid-describe-callback": "error",
-    "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
+    "jest/valid-expect": "error",
     "jest/valid-title": "error",
-
-    // TODO: Review rules.
-    "jest/max-expects": "off",
-    "jest/prefer-comparison-matcher": "off",
-    "jest/prefer-each": "off",
-    "jest/prefer-equality-matcher": "off",
-    "jest/prefer-mock-promise-shorthand": "off",
-    "jest/prefer-snapshot-hint": "off",
-    "jest/no-confusing-set-timeout": "off",
-    "jest/no-restricted-jest-methods": "off",
-    "jest/no-untyped-mock-factory": "off",
-    // #endregion
   },
   settings: {
     jest: {

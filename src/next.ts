@@ -27,8 +27,8 @@ export const nextConfig: Linter.FlatConfig = {
     "@next/next/no-styled-jsx-in-document": "warn",
     "@next/next/no-sync-scripts": "warn",
     "@next/next/no-title-in-document-head": "warn",
-    "@next/next/no-typos": "warn",
-    "@next/next/no-unwanted-polyfillio": "warn",
+    "@next/next/no-typos": "error",
+    "@next/next/no-unwanted-polyfillio": "error",
     // #endregion
   },
 };

@@ -143,10 +143,9 @@ export const reactConfig: Linter.FlatConfig = {
     "jsx-a11y/role-supports-aria-props": "error",
     "jsx-a11y/scope": "error",
     "jsx-a11y/tabindex-no-positive": "error",
-    // TODO: Review rules
-    "jsx-a11y/anchor-ambiguous-text": "off",
-    "jsx-a11y/no-aria-hidden-on-focusable": "off",
-    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/anchor-ambiguous-text": "error",
+    "jsx-a11y/no-aria-hidden-on-focusable": "error",
+    "jsx-a11y/prefer-tag-over-role": "error",
 
     // jsx-a11y -- deprecated
     "jsx-a11y/no-onchange": "off",
@@ -335,13 +334,14 @@ export const reactConfig: Linter.FlatConfig = {
     "react/static-property-placement": "error",
     "react/style-prop-object": "error",
     "react/void-dom-elements-no-children": "error",
+    "react/no-invalid-html-attribute": "error",
+    "react/no-arrow-function-lifecycle": "error",
+    "react/no-unused-class-component-methods": "error",
+    // #endregion
 
-    // TODO: Review rules.
-    "react/jsx-sort-default-props": "off",
+    // #region deprecated
     "react/jsx-space-before-closing": "off",
-    "react/no-invalid-html-attribute": "off",
-    "react/no-arrow-function-lifecycle": "off",
-    "react/no-unused-class-component-methods": "off",
+    "react/jsx-sort-default-props": "off",
     // #endregion
 
     // #region react-hooks
