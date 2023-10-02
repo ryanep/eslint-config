@@ -91,7 +91,11 @@ export const baseConfig: Linter.FlatConfig = {
     "prefer-promise-reject-errors": "error",
     "require-atomic-updates": "error",
     "require-yield": "error",
-    "sort-keys": ["error", "asc", { natural: false }],
+    "sort-keys": [
+      "error",
+      "asc",
+      { allowLineSeparatedGroups: true, natural: false },
+    ],
     "use-isnan": "error",
     "valid-typeof": "error",
     "yoda": "error",
