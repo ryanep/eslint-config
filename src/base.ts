@@ -1,23 +1,23 @@
-import globals from "globals";
 import * as importPlugin from "eslint-plugin-import";
-import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import prettierPlugin from "eslint-plugin-prettier";
+import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
+import globals from "globals";
 import type { Linter } from "eslint";
 
 export const baseConfig: Linter.FlatConfig = {
   files: ["**/*.[jt]s?(x)"],
-  plugins: {
-    "import": importPlugin,
-    "prettier": prettierPlugin,
-    "sort-destructure-keys": sortDestructureKeysPlugin,
-    "unicorn": unicornPlugin,
-  },
   languageOptions: {
     globals: {
       ...globals.browser,
       ...globals.node,
     },
+  },
+  plugins: {
+    "import": importPlugin,
+    "prettier": prettierPlugin,
+    "sort-destructure-keys": sortDestructureKeysPlugin,
+    "unicorn": unicornPlugin,
   },
   rules: {
     // #region built-in
@@ -42,9 +42,9 @@ export const baseConfig: Linter.FlatConfig = {
     "no-dupe-else-if": "error",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
+    "no-empty": "error",
     "no-empty-character-class": "error",
     "no-empty-pattern": "error",
-    "no-empty": "error",
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
     "no-extra-semi": "error",
@@ -97,7 +97,6 @@ export const baseConfig: Linter.FlatConfig = {
     "yoda": "error",
 
     // TODO: Review rules.
-    "no-return-await": "off",
     "accessor-pairs": "off",
     "array-bracket-newline": "off",
     "array-bracket-spacing": "off",
@@ -221,6 +220,7 @@ export const baseConfig: Linter.FlatConfig = {
     "no-restricted-properties": "off",
     "no-restricted-syntax": "off",
     "no-return-assign": "off",
+    "no-return-await": "off",
     "no-script-url": "off",
     "no-self-compare": "off",
     "no-sequences": "off",
@@ -348,40 +348,40 @@ export const baseConfig: Linter.FlatConfig = {
     "import/no-duplicates": "error",
 
     // TODO: Review rules.
-    "import/named": "off",
+    "import/consistent-type-specifier-style": "off",
     "import/default": "off",
-    "import/namespace": "off",
-    "import/no-namespace": "off",
-    "import/no-restricted-paths": "off",
-    "import/no-internal-modules": "off",
+    "import/dynamic-import-chunkname": "off",
+    "import/exports-last": "off",
+    "import/first": "off",
     "import/group-exports": "off",
+    "import/imports-first": "off",
+    "import/max-dependencies": "off",
+    "import/named": "off",
+    "import/namespace": "off",
+    "import/no-absolute-path": "off",
+    "import/no-amd": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/no-commonjs": "off",
+    "import/no-cycle": "off",
+    "import/no-default-export": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-empty-named-blocks": "off",
+    "import/no-import-module-exports": "off",
+    "import/no-internal-modules": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-named-default": "off",
+    "import/no-named-export": "off",
+    "import/no-namespace": "off",
+    "import/no-nodejs-modules": "off",
     "import/no-relative-packages": "off",
     "import/no-relative-parent-imports": "off",
+    "import/no-restricted-paths": "off",
     "import/no-self-import": "off",
-    "import/no-cycle": "off",
-    "import/no-named-default": "off",
-    "import/no-named-as-default-member": "off",
-    "import/no-anonymous-default-export": "off",
-    "import/no-unused-modules": "off",
-    "import/no-commonjs": "off",
-    "import/no-amd": "off",
-    "import/first": "off",
-    "import/max-dependencies": "off",
-    "import/no-absolute-path": "off",
-    "import/no-nodejs-modules": "off",
-    "import/no-webpack-loader-syntax": "off",
-    "import/no-default-export": "off",
-    "import/no-named-export": "off",
-    "import/no-dynamic-require": "off",
-    "import/unambiguous": "off",
     "import/no-unassigned-import": "off",
+    "import/no-unused-modules": "off",
     "import/no-useless-path-segments": "off",
-    "import/dynamic-import-chunkname": "off",
-    "import/no-import-module-exports": "off",
-    "import/exports-last": "off",
-    "import/imports-first": "off",
-    "import/consistent-type-specifier-style": "off",
-    "import/no-empty-named-blocks": "off",
+    "import/no-webpack-loader-syntax": "off",
+    "import/unambiguous": "off",
     // #endregion
 
     // #region prettier
@@ -450,8 +450,8 @@ export const baseConfig: Linter.FlatConfig = {
     "unicorn/numeric-separators-style": "error",
     "unicorn/prefer-add-event-listener": "error",
     "unicorn/prefer-array-find": "error",
-    "unicorn/prefer-array-flat-map": "error",
     "unicorn/prefer-array-flat": "error",
+    "unicorn/prefer-array-flat-map": "error",
     "unicorn/prefer-array-index-of": "error",
     "unicorn/prefer-array-some": "error",
     "unicorn/prefer-at": "error",
@@ -507,6 +507,7 @@ export const baseConfig: Linter.FlatConfig = {
     "unicorn/template-indent": "error",
     "unicorn/text-encoding-identifier-case": "error",
     "unicorn/throw-new-error": "error",
+
     // deprecated
     "unicorn/import-index": "off",
     "unicorn/no-array-instanceof": "off",
@@ -526,11 +527,11 @@ export const baseConfig: Linter.FlatConfig = {
     // #endregion
   },
   settings: {
-    "import/resolver": {
-      typescript: true,
-    },
     "import/parsers": {
       "@typescript-eslint/parser": [".js", ".jsx", ".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: true,
     },
   },
 };

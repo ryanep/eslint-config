@@ -1,14 +1,14 @@
-import globals from "globals";
 import jestPlugin from "eslint-plugin-jest";
+import globals from "globals";
 import type { Linter } from "eslint";
 
 export const jestConfig: Linter.FlatConfig = {
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
-  plugins: {
-    jest: jestPlugin,
-  },
   languageOptions: {
     globals: globals.jest,
+  },
+  plugins: {
+    jest: jestPlugin,
   },
   rules: {
     "jest/consistent-test-it": "error",
@@ -64,8 +64,8 @@ export const jestConfig: Linter.FlatConfig = {
     "jest/require-top-level-describe": "error",
     "jest/unbound-method": "error",
     "jest/valid-describe-callback": "error",
-    "jest/valid-expect-in-promise": "error",
     "jest/valid-expect": "error",
+    "jest/valid-expect-in-promise": "error",
     "jest/valid-title": "error",
   },
   settings: {

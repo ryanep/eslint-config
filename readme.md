@@ -12,25 +12,19 @@ This project is a personal ESLint configuration to ensure code quality and consi
 
 ## Usage
 
-Install the packages using `npm install --save-dev @ryanep/eslint-config @rushstack/eslint-patch`.
+Install the packages using `npm install --save-dev @ryanep/eslint-config`.
 
-Create a new `.eslintrc` file and add the following:
+Create a new `eslint.config.js` file and add the following:
 
 ```javascript
-require("@rushstack/eslint-patch/modern-module-resolution");
+const { baseConfig } = require("@ryanep/eslint-config/lib/base");
+const { typescriptConfig } = require("@ryanep/eslint-config/lib/typescript");
 
-module.exports = {
-  extends: [
-    "@ryanep/eslint-config/base",
-    "@ryanep/eslint-config/typescript",
-    "@ryanep/eslint-config/react",
-    "@ryanep/eslint-config/tailwind",
-    "@ryanep/eslint-config/json",
-    "@ryanep/eslint-config/jest",
-    "@ryanep/eslint-config/testing-library",
-    "@ryanep/eslint-config/prettier",
-  ],
-};
+module.exports = [
+  baseConfig,
+  typescriptConfig,
+];
+
 ```
 
 ## License

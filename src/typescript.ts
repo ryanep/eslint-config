@@ -1,5 +1,5 @@
-import * as typescriptParser from "@typescript-eslint/parser";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import * as typescriptParser from "@typescript-eslint/parser";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import type { Linter } from "eslint";
 
@@ -119,8 +119,8 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
-    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/prefer-readonly": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
     "@typescript-eslint/prefer-regexp-exec": "error",
     "@typescript-eslint/prefer-return-this-type": "off",
@@ -141,12 +141,16 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/unified-signatures": "error",
 
     // #region disable formatting rules.
+    "@typescript-eslint/block-spacing": "off",
     "@typescript-eslint/brace-style": "off",
+    "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/func-call-spacing": "off",
     "@typescript-eslint/indent": "off",
+    "@typescript-eslint/key-spacing": "off",
     "@typescript-eslint/keyword-spacing": "off",
+    "@typescript-eslint/lines-around-comment": "off",
     "@typescript-eslint/lines-between-class-members": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/no-extra-parens": "off",
@@ -158,10 +162,6 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/space-infix-ops": "off",
     "@typescript-eslint/type-annotation-spacing": "off",
-    "@typescript-eslint/block-spacing": "off",
-    "@typescript-eslint/class-methods-use-this": "off",
-    "@typescript-eslint/key-spacing": "off",
-    "@typescript-eslint/lines-around-comment": "off",
     // #endregion
 
     // #region disable base rules
@@ -180,6 +180,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "no-magic-numbers": "off",
     "no-redeclare": "off",
     "no-restricted-imports": "off",
+    "no-return-await": "off",
     "no-shadow": "off",
     "no-throw-literal": "off",
     "no-undef": "off",
@@ -188,7 +189,6 @@ export const typescriptConfig: Linter.FlatConfig = {
     "no-use-before-define": "off",
     "no-useless-constructor": "off",
     "require-await": "off",
-    "no-return-await": "off",
     // #endregion
 
     // #region typescript-sort-keys

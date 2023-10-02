@@ -1,16 +1,11 @@
-import globals from "globals";
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import globals from "globals";
 import type { Linter } from "eslint";
 
 export const reactConfig: Linter.FlatConfig = {
   files: ["**/*.{jsx,tsx}"],
-  plugins: {
-    "react": reactPlugin,
-    "react-hooks": reactHooksPlugin,
-    "jsx-a11y": jsxA11yPlugin,
-  },
   languageOptions: {
     globals: globals.browser,
     parserOptions: {
@@ -19,14 +14,15 @@ export const reactConfig: Linter.FlatConfig = {
       },
     },
   },
-  settings: {
-    react: {
-      version: "detect",
-    },
+  plugins: {
+    "jsx-a11y": jsxA11yPlugin,
+    "react": reactPlugin,
+    "react-hooks": reactHooksPlugin,
   },
   rules: {
     // #region jsx-a11y
     "jsx-a11y/alt-text": "error",
+    "jsx-a11y/anchor-ambiguous-text": "error",
     "jsx-a11y/anchor-has-content": "error",
     "jsx-a11y/anchor-is-valid": "error",
     "jsx-a11y/aria-activedescendant-has-tabindex": "error",
@@ -60,6 +56,7 @@ export const reactConfig: Linter.FlatConfig = {
     "jsx-a11y/media-has-caption": "error",
     "jsx-a11y/mouse-events-have-key-events": "error",
     "jsx-a11y/no-access-key": "error",
+    "jsx-a11y/no-aria-hidden-on-focusable": "error",
     "jsx-a11y/no-autofocus": "error",
     "jsx-a11y/no-distracting-elements": "error",
     "jsx-a11y/no-interactive-element-to-noninteractive-role": [
@@ -139,18 +136,16 @@ export const reactConfig: Linter.FlatConfig = {
         ],
       },
     ],
+    "jsx-a11y/prefer-tag-over-role": "error",
     "jsx-a11y/role-has-required-aria-props": "error",
     "jsx-a11y/role-supports-aria-props": "error",
     "jsx-a11y/scope": "error",
     "jsx-a11y/tabindex-no-positive": "error",
-    "jsx-a11y/anchor-ambiguous-text": "error",
-    "jsx-a11y/no-aria-hidden-on-focusable": "error",
-    "jsx-a11y/prefer-tag-over-role": "error",
 
     // jsx-a11y -- deprecated
-    "jsx-a11y/no-onchange": "off",
     "jsx-a11y/accessible-emoji": "off",
     "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/no-onchange": "off",
     // #endregion
 
     // #region react
@@ -164,7 +159,6 @@ export const reactConfig: Linter.FlatConfig = {
     "react/forbid-elements": "off",
     "react/forbid-foreign-prop-types": "error",
     "react/forbid-prop-types": "error",
-    "react/hook-use-state": "error",
     "react/function-component-definition": [
       "error",
       {
@@ -172,6 +166,7 @@ export const reactConfig: Linter.FlatConfig = {
         unnamedComponents: "arrow-function",
       },
     ],
+    "react/hook-use-state": "error",
     "react/iframe-missing-sandbox": "error",
     "react/jsx-boolean-value": ["error", "never"],
     "react/jsx-child-element-spacing": "error",
@@ -287,6 +282,7 @@ export const reactConfig: Linter.FlatConfig = {
     "react/no-access-state-in-setstate": "error",
     "react/no-adjacent-inline-elements": "off",
     "react/no-array-index-key": "error",
+    "react/no-arrow-function-lifecycle": "error",
     "react/no-children-prop": "error",
     "react/no-danger": "error",
     "react/no-danger-with-children": "error",
@@ -295,6 +291,7 @@ export const reactConfig: Linter.FlatConfig = {
     "react/no-did-update-set-state": "error",
     "react/no-direct-mutation-state": "error",
     "react/no-find-dom-node": "error",
+    "react/no-invalid-html-attribute": "error",
     "react/no-is-mounted": "error",
     "react/no-multi-comp": ["error", { ignoreStateless: true }],
     "react/no-namespace": "error",
@@ -309,6 +306,7 @@ export const reactConfig: Linter.FlatConfig = {
     "react/no-unknown-property": "error",
     "react/no-unsafe": "error",
     "react/no-unstable-nested-components": "error",
+    "react/no-unused-class-component-methods": "error",
     "react/no-unused-prop-types": "error",
     "react/no-unused-state": "error",
     "react/no-will-update-set-state": "error",
@@ -317,9 +315,7 @@ export const reactConfig: Linter.FlatConfig = {
     "react/prefer-read-only-props": "error",
     "react/prefer-stateless-function": [
       "error",
-      {
-        ignorePureComponents: true,
-      },
+      { ignorePureComponents: true },
     ],
     "react/prop-types": "error",
     "react/react-in-jsx-scope": "off",
@@ -334,19 +330,21 @@ export const reactConfig: Linter.FlatConfig = {
     "react/static-property-placement": "error",
     "react/style-prop-object": "error",
     "react/void-dom-elements-no-children": "error",
-    "react/no-invalid-html-attribute": "error",
-    "react/no-arrow-function-lifecycle": "error",
-    "react/no-unused-class-component-methods": "error",
     // #endregion
 
     // #region deprecated
-    "react/jsx-space-before-closing": "off",
     "react/jsx-sort-default-props": "off",
+    "react/jsx-space-before-closing": "off",
     // #endregion
 
     // #region react-hooks
     "react-hooks/exhaustive-deps": "error",
     "react-hooks/rules-of-hooks": "error",
     // #endregion
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };

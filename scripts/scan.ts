@@ -1,5 +1,5 @@
-import { Linter } from "eslint";
 import fs from "node:fs/promises";
+import { Linter } from "eslint";
 
 const configPath = "./src";
 
@@ -23,7 +23,9 @@ const main = async () => {
     const pluginNames = config.plugins ? Object.keys(config.plugins) : [];
     const rules = config.rules ? Object.keys(config.rules) : [];
 
-    rules.forEach((rule) => setRules.add(rule));
+    for (const rule of rules) {
+      setRules.add(rule);
+    }
 
     for (const pluginName of pluginNames) {
       const pluginRules = Object.keys(config.plugins?.[pluginName].rules ?? {});
@@ -51,12 +53,11 @@ const main = async () => {
     console.error("Invalid rules:", invalidRules);
 
     console.timeEnd();
-    return process.exit(1);
+    throw new Error("Unset or invalid rules found.");
   }
 
   console.log("No unset rules.");
   console.timeEnd();
-  return process.exit();
 };
 
 main().catch(console.error);
