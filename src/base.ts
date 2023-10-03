@@ -319,6 +319,7 @@ export const baseConfig: Linter.FlatConfig = {
     ],
     "import/newline-after-import": "error",
     "import/no-deprecated": "error",
+    "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": "off",
     "import/no-mutable-exports": "error",
     "import/no-named-as-default": "error",
@@ -349,7 +350,6 @@ export const baseConfig: Linter.FlatConfig = {
       },
     ],
     "import/prefer-default-export": "off",
-    "import/no-duplicates": "error",
 
     // TODO: Review rules.
     "import/consistent-type-specifier-style": "off",
