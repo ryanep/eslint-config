@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/ryanep/eslint-config/compare/v0.3.0...v0.3.1) (2023-10-03)
+
+
+### Bug Fixes
+
+* update release github workflow to build config files ([71a9a51](https://github.com/ryanep/eslint-config/commit/71a9a5128f66375e9266ad1142f6f345a4123b7a))
+
 # [0.3.0](https://github.com/ryanep/eslint-config/compare/v0.2.0...v0.3.0) (2023-10-03)
 
 
