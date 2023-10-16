@@ -111,6 +111,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/non-nullable-type-assertion-style": "error",
     "@typescript-eslint/parameter-properties": "off",
     "@typescript-eslint/prefer-as-const": "error",
+    "@typescript-eslint/prefer-destructuring": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-function-type": "error",
