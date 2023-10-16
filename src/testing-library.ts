@@ -28,6 +28,7 @@ export const testingLibraryConfig: Linter.FlatConfig = {
     "testing-library/no-wait-for-snapshot": "error",
     "testing-library/prefer-explicit-assert": "error",
     "testing-library/prefer-find-by": "error",
+    "testing-library/prefer-implicit-assert": "off",
     "testing-library/prefer-presence-queries": "error",
     "testing-library/prefer-query-by-disappearance": "error",
     "testing-library/prefer-query-matchers": "off",
