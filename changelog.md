@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/ryanep/eslint-config/compare/v0.3.1...v0.4.0) (2023-10-16)
+
+
+### Features
+
+* upgrade dependencies and set new @typescript-eslint/prefer-destructuring rule ([bd068d2](https://github.com/ryanep/eslint-config/commit/bd068d2c653aa374219e026ba64a61287bf12df9))
+
 ## [0.3.1](https://github.com/ryanep/eslint-config/compare/v0.3.0...v0.3.1) (2023-10-03)
 
 
