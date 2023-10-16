@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/ryanep/eslint-config/compare/v0.4.0...v0.4.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* update semantic release to update package-lock file ([96f2cea](https://github.com/ryanep/eslint-config/commit/96f2cea3c18181312cf62ffaf69fb4638c0090d5))
+
 # [0.4.0](https://github.com/ryanep/eslint-config/compare/v0.3.1...v0.4.0) (2023-10-16)
 
 
