@@ -1,3 +1,10 @@
+## [0.5.3](https://github.com/ryanep/eslint-config/compare/v0.5.2...v0.5.3) (2023-10-20)
+
+
+### Bug Fixes
+
+* move eslint-plugin-perfectionist to dependencies ([24e05ea](https://github.com/ryanep/eslint-config/commit/24e05ea8703d7a7f6c8d607f012e2d118321ff86))
+
 ## [0.5.2](https://github.com/ryanep/eslint-config/compare/v0.5.1...v0.5.2) (2023-10-20)
 
 
