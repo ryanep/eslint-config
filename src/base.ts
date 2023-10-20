@@ -94,7 +94,7 @@ export const baseConfig: Linter.FlatConfig = {
     "require-atomic-updates": "error",
     "require-yield": "error",
     "sort-keys": [
-      "error",
+      "off", // Replaced by perfectionist/sort-objects.
       "asc",
       { allowLineSeparatedGroups: true, natural: false },
     ],
