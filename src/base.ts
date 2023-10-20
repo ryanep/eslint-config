@@ -403,7 +403,12 @@ export const baseConfig: Linter.FlatConfig = {
     "perfectionist/sort-named-exports": "error",
     "perfectionist/sort-named-imports": "error",
     "perfectionist/sort-object-types": "error",
-    "perfectionist/sort-objects": "error",
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "partition-by-comment": true,
+      },
+    ],
     "perfectionist/sort-svelte-attributes": "error",
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-vue-attributes": "error",
