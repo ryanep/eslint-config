@@ -140,3 +140,11 @@ declare module "eslint-plugin-unicorn" {
 
   export = eslintPlugin;
 }
+
+declare module "eslint-plugin-perfectionist" {
+  import type { ESLint } from "eslint";
+
+  declare const eslintPlugin: ESLint.Plugin;
+
+  export = eslintPlugin;
+}

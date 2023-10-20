@@ -17,7 +17,7 @@ export const typescriptConfig: Linter.FlatConfig = {
   },
   rules: {
     // #region @typescript-eslint
-    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "@typescript-eslint/adjacent-overload-signatures": "off", // Replaced by perfectionist/sort-interfaces.
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/ban-ts-comment": "error",
@@ -133,7 +133,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/restrict-template-expressions": "error",
     "@typescript-eslint/return-await": "off",
-    "@typescript-eslint/sort-type-constituents": "error",
+    "@typescript-eslint/sort-type-constituents": "off", // Replaced by perfectionist/sort-union-types.
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/switch-exhaustiveness-check": "off",
     "@typescript-eslint/triple-slash-reference": "error",

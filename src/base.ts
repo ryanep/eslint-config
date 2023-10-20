@@ -1,4 +1,5 @@
 import * as importPlugin from "eslint-plugin-import";
+import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPlugin from "eslint-plugin-prettier";
 import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
@@ -15,6 +16,7 @@ export const baseConfig: Linter.FlatConfig = {
   },
   plugins: {
     "import": importPlugin,
+    "perfectionist": perfectionistPlugin,
     "prettier": prettierPlugin,
     "sort-destructure-keys": sortDestructureKeysPlugin,
     "unicorn": unicornPlugin,
@@ -282,7 +284,7 @@ export const baseConfig: Linter.FlatConfig = {
     "semi": "off",
     "semi-spacing": "off",
     "semi-style": "off",
-    "sort-imports": "off",
+    "sort-imports": "off", // Replaced by perfectionist/sort-imports.
     "sort-vars": "off",
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
@@ -387,6 +389,25 @@ export const baseConfig: Linter.FlatConfig = {
     "import/no-webpack-loader-syntax": "off",
     "import/unambiguous": "off",
     // #endregion
+
+    // #region perfectionist
+    "perfectionist/sort-array-includes": "error",
+    "perfectionist/sort-astro-attributes": "error",
+    "perfectionist/sort-classes": "error",
+    "perfectionist/sort-enums": "error",
+    "perfectionist/sort-exports": "error",
+    "perfectionist/sort-imports": "off", // Handled by imports/order.
+    "perfectionist/sort-interfaces": "error",
+    "perfectionist/sort-jsx-props": "error",
+    "perfectionist/sort-maps": "error",
+    "perfectionist/sort-named-exports": "error",
+    "perfectionist/sort-named-imports": "error",
+    "perfectionist/sort-object-types": "error",
+    "perfectionist/sort-objects": "error",
+    "perfectionist/sort-svelte-attributes": "error",
+    "perfectionist/sort-union-types": "error",
+    "perfectionist/sort-vue-attributes": "error",
+    // #region
 
     // #region prettier
     "prettier/prettier": "warn",
