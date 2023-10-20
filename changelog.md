@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/ryanep/eslint-config/compare/v0.5.1...v0.5.2) (2023-10-20)
+
+
+### Bug Fixes
+
+* disable sort-keys base rule ([05c0125](https://github.com/ryanep/eslint-config/commit/05c0125edc997bfeb4c2590f19e8ad75cea713e0))
+
 ## [0.5.1](https://github.com/ryanep/eslint-config/compare/v0.5.0...v0.5.1) (2023-10-20)
 
 
