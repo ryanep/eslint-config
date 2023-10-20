@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/ryanep/eslint-config/compare/v0.4.1...v0.5.0) (2023-10-20)
+
+
+### Features
+
+* add and configure eslint-plugin-perfectionist ([1140bee](https://github.com/ryanep/eslint-config/commit/1140bee335b182287d0cd9c5a3c3d4288bb6fea3))
+
 ## [0.4.1](https://github.com/ryanep/eslint-config/compare/v0.4.0...v0.4.1) (2023-10-16)
 
 
