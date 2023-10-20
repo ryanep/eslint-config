@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/ryanep/eslint-config/compare/v0.5.0...v0.5.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* update perfectionist/sort-objects to enable partition-by-comment option ([fe95b2e](https://github.com/ryanep/eslint-config/commit/fe95b2eea23d5ed079e55eb5ce7cb6b5b10c8570))
+
 # [0.5.0](https://github.com/ryanep/eslint-config/compare/v0.4.1...v0.5.0) (2023-10-20)
 
 
