@@ -17,7 +17,7 @@ const main = async () => {
       string,
       Linter.FlatConfig
     >;
-    const configKey = Object.keys(module)[0];
+    const [configKey] = Object.keys(module);
     const config = module[configKey];
 
     const pluginNames = config.plugins ? Object.keys(config.plugins) : [];

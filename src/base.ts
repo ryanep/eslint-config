@@ -526,7 +526,7 @@ export const baseConfig: Linter.FlatConfig = {
     "unicorn/prefer-type-error": "error",
     "unicorn/prevent-abbreviations": [
       "error",
-      { allowList: { Args: true, Props: true, args: true, props: true } },
+      { allowList: { args: true, Args: true, props: true, Props: true } },
     ],
     "unicorn/relative-url-style": "error",
     "unicorn/require-array-join-separator": "error",
