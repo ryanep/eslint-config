@@ -1,3 +1,10 @@
+## [0.5.4](https://github.com/ryanep/eslint-config/compare/v0.5.3...v0.5.4) (2023-11-01)
+
+
+### Bug Fixes
+
+* set @typescript-eslint/max-params rule to off ([b6df948](https://github.com/ryanep/eslint-config/commit/b6df9487b0aa8ea8011f135f338fa4f05c64585d))
+
 ## [0.5.3](https://github.com/ryanep/eslint-config/compare/v0.5.2...v0.5.3) (2023-10-20)
 
 
