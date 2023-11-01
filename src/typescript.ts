@@ -36,6 +36,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/init-declarations": "off",
+    "@typescript-eslint/max-params": "off",
     "@typescript-eslint/member-ordering": "error",
     "@typescript-eslint/method-signature-style": "error",
     "@typescript-eslint/naming-convention": "off",
