@@ -1,3 +1,15 @@
+# [0.6.0](https://github.com/ryanep/eslint-config/compare/v0.5.4...v0.6.0) (2023-11-03)
+
+
+### Bug Fixes
+
+* update perfectionist/sort-imports group order ([86001aa](https://github.com/ryanep/eslint-config/commit/86001aae0d405669a3647dc08b870a23a2909feb))
+
+
+### Features
+
+* replace import/order with perfectionist/sort-imports ([de3d3c5](https://github.com/ryanep/eslint-config/commit/de3d3c5ea5486f910e29bcbaf40eb5a2e598a597))
+
 ## [0.5.4](https://github.com/ryanep/eslint-config/compare/v0.5.3...v0.5.4) (2023-11-01)
 
 
