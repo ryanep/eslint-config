@@ -327,31 +327,7 @@ export const baseConfig: Linter.FlatConfig = {
     "import/no-mutable-exports": "error",
     "import/no-named-as-default": "error",
     "import/no-unresolved": "error",
-    "import/order": [
-      "error",
-      {
-        alphabetize: {
-          caseInsensitive: true,
-          order: "asc",
-        },
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
-        ],
-        pathGroups: [
-          {
-            group: "internal",
-            pattern: "#/**",
-          },
-        ],
-      },
-    ],
+    "import/order": "off",
     "import/prefer-default-export": "off",
 
     // TODO: Review rules.
@@ -396,7 +372,14 @@ export const baseConfig: Linter.FlatConfig = {
     "perfectionist/sort-classes": "error",
     "perfectionist/sort-enums": "error",
     "perfectionist/sort-exports": "error",
-    "perfectionist/sort-imports": "off", // Handled by imports/order.
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "internal-pattern": ["#/**", "@/**"],
+        "newlines-between": "never",
+        "type": "natural",
+      },
+    ],
     "perfectionist/sort-interfaces": "error",
     "perfectionist/sort-jsx-props": "error",
     "perfectionist/sort-maps": "error",
