@@ -1,3 +1,11 @@
+## [0.6.1](https://github.com/ryanep/eslint-config/compare/v0.6.0...v0.6.1) (2023-11-03)
+
+
+### Bug Fixes
+
+* enable import/no-self-import rule ([a0b3700](https://github.com/ryanep/eslint-config/commit/a0b37008fe166e4c10e1d9944ebcca19d05e8b29))
+* update perfectionist/sort-imports group order ([80d2184](https://github.com/ryanep/eslint-config/commit/80d2184762972fd599a8c5e0ac930515e64f6fcf))
+
 # [0.6.0](https://github.com/ryanep/eslint-config/compare/v0.5.4...v0.6.0) (2023-11-03)
 
 
