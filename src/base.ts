@@ -375,6 +375,18 @@ export const baseConfig: Linter.FlatConfig = {
     "perfectionist/sort-imports": [
       "error",
       {
+        "groups": [
+          "side-effect",
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"],
+          "type",
+          "internal-type",
+          ["parent-type", "sibling-type", "index-type"],
+          "object",
+          "unknown",
+        ],
         "internal-pattern": ["#/**", "@/**"],
         "newlines-between": "never",
         "type": "natural",
