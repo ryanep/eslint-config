@@ -1,16 +1,6 @@
-const { baseConfig } = require("@ryanep/eslint-config/lib/base");
-const { typescriptConfig } = require("@ryanep/eslint-config/lib/typescript");
+const { baseConfig } = require("./lib/base");
+const { typescriptConfig } = require("./lib/typescript");
+const { jsonConfig } = require("./lib/json");
+const { ignoresConfig } = require("./lib/ignores");
 
-module.exports = [
-  baseConfig,
-  typescriptConfig,
-  {
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/lib/**",
-      "eslint.config.js",
-    ],
-  },
-];
+module.exports = [baseConfig, typescriptConfig, jsonConfig, ignoresConfig];
