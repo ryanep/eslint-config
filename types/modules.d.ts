@@ -101,14 +101,6 @@ declare module "eslint-plugin-react" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-sort-destructure-keys" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-tailwindcss" {
   import type { ESLint } from "eslint";
 

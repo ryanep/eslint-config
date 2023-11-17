@@ -1,7 +1,6 @@
 import * as importPlugin from "eslint-plugin-import";
 import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPlugin from "eslint-plugin-prettier";
-import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
 import globals from "globals";
 import type { Linter } from "eslint";
@@ -15,11 +14,10 @@ export const baseConfig: Linter.FlatConfig = {
     },
   },
   plugins: {
-    "import": importPlugin,
-    "perfectionist": perfectionistPlugin,
-    "prettier": prettierPlugin,
-    "sort-destructure-keys": sortDestructureKeysPlugin,
-    "unicorn": unicornPlugin,
+    import: importPlugin,
+    perfectionist: perfectionistPlugin,
+    prettier: prettierPlugin,
+    unicorn: unicornPlugin,
   },
   rules: {
     // #region built-in
@@ -412,10 +410,6 @@ export const baseConfig: Linter.FlatConfig = {
     // #region prettier
     "prettier/prettier": "warn",
     // #region
-
-    // #region sort-destructure-keys
-    "sort-destructure-keys/sort-destructure-keys": "error",
-    // #endregion
 
     // #region unicorn
     "unicorn/better-regex": "error",
