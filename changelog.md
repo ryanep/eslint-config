@@ -1,3 +1,18 @@
+# [0.7.0](https://github.com/ryanep/eslint-config/compare/v0.6.1...v0.7.0) (2023-11-17)
+
+
+### Bug Fixes
+
+* remove sort-destructure-keys plugin ([a6b64d4](https://github.com/ryanep/eslint-config/commit/a6b64d4185bd50d728a511ae76427ae59f7fc0ab))
+* remove typescript-sort-keys plugin ([926ad68](https://github.com/ryanep/eslint-config/commit/926ad689664b7ac75f8e91f8208f862e3fdf756f))
+
+
+### Features
+
+* add default create config function ([063d173](https://github.com/ryanep/eslint-config/commit/063d17338131ca3c13b7ca9e527190e0dd04909a))
+* add ignores config ([e07ba20](https://github.com/ryanep/eslint-config/commit/e07ba20bbc7448ab492146a26fd0a0cdafff59e9))
+* add json configuration ([a3026cc](https://github.com/ryanep/eslint-config/commit/a3026cc318f37e4312e9f2488e1c04b51b8e2b5a))
+
 ## [0.6.1](https://github.com/ryanep/eslint-config/compare/v0.6.0...v0.6.1) (2023-11-03)
 
 
