@@ -1,6 +1,5 @@
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import * as typescriptParser from "@typescript-eslint/parser";
-import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import type { Linter } from "eslint";
 
 export const typescriptConfig: Linter.FlatConfig = {
@@ -13,7 +12,6 @@ export const typescriptConfig: Linter.FlatConfig = {
   },
   plugins: {
     "@typescript-eslint": typescriptPlugin,
-    "typescript-sort-keys": typescriptSortKeysPlugin,
   },
   rules: {
     // #region @typescript-eslint
@@ -191,11 +189,6 @@ export const typescriptConfig: Linter.FlatConfig = {
     "no-use-before-define": "off",
     "no-useless-constructor": "off",
     "require-await": "off",
-    // #endregion
-
-    // #region typescript-sort-keys
-    "typescript-sort-keys/interface": "error",
-    "typescript-sort-keys/string-enum": "error",
     // #endregion
   },
 };

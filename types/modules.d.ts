@@ -125,14 +125,6 @@ declare module "eslint-plugin-testing-library" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-typescript-sort-keys" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-unicorn" {
   import type { ESLint } from "eslint";
 
