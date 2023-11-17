@@ -13,6 +13,16 @@ declare module "@typescript-eslint/parser" {
   export = eslintParser;
 }
 
+declare module "jsonc-eslint-parser" {
+  import type { Linter } from "eslint";
+
+  declare const eslintParser: NonNullable<
+    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
+  >;
+
+  export = eslintParser;
+}
+
 declare module "@next/eslint-plugin-next" {
   import type { ESLint } from "eslint";
 

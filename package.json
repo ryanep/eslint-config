@@ -3,15 +3,15 @@
   "version": "0.6.1",
   "description": "A personal ESLint config",
   "keywords": [
-    "eslint",
     "config",
+    "eslint",
     "ryanep"
   ],
   "license": "MIT",
   "main": "./lib",
   "files": [
-    "readme.md",
-    "lib"
+    "lib",
+    "readme.md"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
