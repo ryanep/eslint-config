@@ -19,13 +19,14 @@
     "dev": "nodemon",
     "format": "prettier --write .",
     "generate": "node -r ts-node/register ./scripts/generate",
-    "lint": "eslint './**/*.{ts,json}'",
+    "lint": "eslint './**/*.{ts,json,graphql}'",
     "precommit": "lint-staged",
     "release": "semantic-release",
     "scan": "node -r ts-node/register/transpile-only ./scripts/scan"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.23.3",
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@next/eslint-plugin-next": "^14.0.3",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",

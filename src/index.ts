@@ -1,4 +1,5 @@
 import { baseConfig } from "./base";
+import { graphqlConfig } from "./graphql";
 import { ignoresConfig } from "./ignores";
 import { jestConfig } from "./jest";
 import { jsonConfig } from "./json";
@@ -11,13 +12,14 @@ import { typescriptConfig } from "./typescript";
 export const createConfig = () => {
   return [
     baseConfig,
-    typescriptConfig,
-    jsonConfig,
-    reactConfig,
-    nextConfig,
+    graphqlConfig,
     jestConfig,
+    jsonConfig,
+    nextConfig,
+    reactConfig,
     tailwindConfig,
     testingLibraryConfig,
+    typescriptConfig,
     ignoresConfig,
   ];
 };

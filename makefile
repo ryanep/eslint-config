@@ -5,7 +5,8 @@ clean:
 	rm -rf ./lib
 
 build:
-	NODE_ENV=production yarn build
+	rm -rf ./lib && \
+	NODE_ENV=production npm run build
 
 scan:
 	npm run scan
