@@ -8,6 +8,7 @@ import { reactConfig } from "./react";
 import { tailwindConfig } from "./tailwindcss";
 import { testingLibraryConfig } from "./testing-library";
 import { typescriptConfig } from "./typescript";
+import { yamlConfig } from "./yaml";
 
 export const createConfig = () => {
   return [
@@ -20,6 +21,7 @@ export const createConfig = () => {
     tailwindConfig,
     testingLibraryConfig,
     typescriptConfig,
+    yamlConfig,
     ignoresConfig,
   ];
 };

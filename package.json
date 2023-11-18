@@ -19,7 +19,7 @@
     "dev": "nodemon",
     "format": "prettier --write .",
     "generate": "node -r ts-node/register ./scripts/generate",
-    "lint": "eslint './**/*.{ts,json,graphql}'",
+    "lint": "eslint './**/*.{ts,json,graphql,yml,yaml}'",
     "precommit": "lint-staged",
     "release": "semantic-release",
     "scan": "node -r ts-node/register/transpile-only ./scripts/scan"
@@ -45,8 +45,10 @@
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-testing-library": "^6.1.2",
     "eslint-plugin-unicorn": "^49.0.0",
+    "eslint-plugin-yml": "^1.10.0",
     "globals": "^13.23.0",
-    "jsonc-eslint-parser": "^2.4.0"
+    "jsonc-eslint-parser": "^2.4.0",
+    "yaml-eslint-parser": "^1.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.2",

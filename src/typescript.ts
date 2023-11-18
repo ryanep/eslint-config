@@ -101,6 +101,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
     "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-use-before-define": "off",

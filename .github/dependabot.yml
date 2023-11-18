@@ -1,8 +1,8 @@
-version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    commit-message:
+  - commit-message:
       prefix: "chore: "
+    directory: /
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
+version: 2

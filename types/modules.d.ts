@@ -23,6 +23,16 @@ declare module "jsonc-eslint-parser" {
   export = eslintParser;
 }
 
+declare module "yaml-eslint-parser" {
+  import type { Linter } from "eslint";
+
+  declare const eslintParser: NonNullable<
+    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
+  >;
+
+  export = eslintParser;
+}
+
 declare module "@graphql-eslint/eslint-plugin" {
   import type { Linter } from "eslint";
 
@@ -31,6 +41,14 @@ declare module "@graphql-eslint/eslint-plugin" {
   >;
 
   export = eslintParser;
+}
+
+declare module "eslint-plugin-yml" {
+  import type { ESLint } from "eslint";
+
+  declare const eslintPlugin: ESLint.Plugin;
+
+  export = eslintPlugin;
 }
 
 declare module "@next/eslint-plugin-next" {
