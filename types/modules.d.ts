@@ -43,6 +43,14 @@ declare module "@graphql-eslint/eslint-plugin" {
   export = eslintParser;
 }
 
+declare module "eslint-plugin-regexp" {
+  import type { ESLint } from "eslint";
+
+  declare const eslintPlugin: ESLint.Plugin;
+
+  export = eslintPlugin;
+}
+
 declare module "eslint-plugin-yml" {
   import type { ESLint } from "eslint";
 

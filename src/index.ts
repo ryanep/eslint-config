@@ -5,6 +5,7 @@ import { jestConfig } from "./jest";
 import { jsonConfig } from "./json";
 import { nextConfig } from "./next";
 import { reactConfig } from "./react";
+import { regexConfig } from "./regex";
 import { tailwindConfig } from "./tailwindcss";
 import { testingLibraryConfig } from "./testing-library";
 import { typescriptConfig } from "./typescript";
@@ -22,6 +23,7 @@ export const createConfig = () => {
     testingLibraryConfig,
     typescriptConfig,
     yamlConfig,
+    regexConfig,
     ignoresConfig,
   ];
 };
