@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/ryanep/eslint-config/compare/v0.7.0...v0.8.0) (2023-11-20)
+
+
+### Features
+
+* add graphql config ([c427721](https://github.com/ryanep/eslint-config/commit/c4277211a1cf53a11484ae77ef62fcd1f2efa380))
+* add regexp configuration ([19ee23f](https://github.com/ryanep/eslint-config/commit/19ee23f2885da725d77afd759887c98212f35bc9))
+* add yaml config ([d2c5ff6](https://github.com/ryanep/eslint-config/commit/d2c5ff614d9155c2e8ec482d4f3960aaffc96409))
+
 # [0.7.0](https://github.com/ryanep/eslint-config/compare/v0.6.1...v0.7.0) (2023-11-17)
 
 
