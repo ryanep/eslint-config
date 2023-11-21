@@ -1,3 +1,11 @@
+## [0.8.1](https://github.com/ryanep/eslint-config/compare/v0.8.0...v0.8.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* update @typescript-eslint/no-misused-promises rule ([6ed834f](https://github.com/ryanep/eslint-config/commit/6ed834ff9e8eb7d4e6778cd0a591ed63156b1fa5))
+* update ignores config to ignore generated and next-env file ([e261dbb](https://github.com/ryanep/eslint-config/commit/e261dbb3b2da449f0c8f5aeae51a9b41e5316225))
+
 # [0.8.0](https://github.com/ryanep/eslint-config/compare/v0.7.0...v0.8.0) (2023-11-20)
 
 
