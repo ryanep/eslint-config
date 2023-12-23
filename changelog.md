@@ -1,3 +1,10 @@
+## [0.9.1](https://github.com/ryanep/eslint-config/compare/v0.9.0...v0.9.1) (2023-12-23)
+
+
+### Bug Fixes
+
+* disable jest/prefer-expect-assertions and jest/prefer-expect-assertions rules ([6129352](https://github.com/ryanep/eslint-config/commit/61293523cb4882985cef27e2d6bd3eb6ef512aa0))
+
 # [0.9.0](https://github.com/ryanep/eslint-config/compare/v0.8.1...v0.9.0) (2023-12-02)
 
 
