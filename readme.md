@@ -12,19 +12,16 @@ This project is a personal ESLint configuration to ensure code quality and consi
 
 ## Usage
 
-Install the packages using `npm install --save-dev @ryanep/eslint-config`.
+Install the packages using `npm install --save-dev eslint @ryanep/eslint-config`.
 
 Create a new `eslint.config.js` file and add the following:
 
 ```javascript
-const { baseConfig } = require("@ryanep/eslint-config/lib/base");
-const { typescriptConfig } = require("@ryanep/eslint-config/lib/typescript");
+import { createConfig } from "@ryanep/eslint-config";
 
-module.exports = [
-  baseConfig,
-  typescriptConfig,
-];
+export const eslintConfig = createConfig();
 
+export default eslintConfig;
 ```
 
 ## License
