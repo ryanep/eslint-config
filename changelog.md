@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/ryanep/eslint-config/compare/v0.9.1...v0.10.0) (2024-02-11)
+
+
+### Features
+
+* add new unicorn and typescript lint rules ([b64a1a4](https://github.com/ryanep/eslint-config/commit/b64a1a448164468f48f221ba888357aba32ac5c4))
+
 ## [0.9.1](https://github.com/ryanep/eslint-config/compare/v0.9.0...v0.9.1) (2023-12-23)
 
 
