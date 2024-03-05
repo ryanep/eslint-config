@@ -151,6 +151,7 @@ export const reactConfig: Linter.FlatConfig = {
     // #region react
     "react/boolean-prop-naming": "error",
     "react/button-has-type": "error",
+    "react/checked-requires-onchange-or-readonly": "error",
     "react/default-props-match-prop-types": "error",
     "react/destructuring-assignment": "error",
     "react/display-name": "off",

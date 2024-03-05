@@ -24,6 +24,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/consistent-generic-constructors": "off",
     "@typescript-eslint/consistent-indexed-object-style": "error",
+    "@typescript-eslint/consistent-return": "error",
     "@typescript-eslint/consistent-type-assertions": "error",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-exports": "error",
