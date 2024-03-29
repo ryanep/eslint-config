@@ -1,6 +1,4 @@
-import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
 import globals from "globals";
 import type { Linter } from "eslint";
 
@@ -15,140 +13,9 @@ export const reactConfig: Linter.FlatConfig = {
     },
   },
   plugins: {
-    "jsx-a11y": jsxA11yPlugin,
-    "react": reactPlugin,
-    "react-hooks": reactHooksPlugin,
+    react: reactPlugin,
   },
   rules: {
-    // #region jsx-a11y
-    "jsx-a11y/alt-text": "error",
-    "jsx-a11y/anchor-ambiguous-text": "error",
-    "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/anchor-is-valid": "error",
-    "jsx-a11y/aria-activedescendant-has-tabindex": "error",
-    "jsx-a11y/aria-props": "error",
-    "jsx-a11y/aria-proptypes": "error",
-    "jsx-a11y/aria-role": "error",
-    "jsx-a11y/aria-unsupported-elements": "error",
-    "jsx-a11y/autocomplete-valid": "error",
-    "jsx-a11y/click-events-have-key-events": "error",
-    "jsx-a11y/control-has-associated-label": "off",
-    "jsx-a11y/heading-has-content": "error",
-    "jsx-a11y/html-has-lang": "error",
-    "jsx-a11y/iframe-has-title": "error",
-    "jsx-a11y/img-redundant-alt": "error",
-    "jsx-a11y/interactive-supports-focus": [
-      "error",
-      {
-        tabbable: [
-          "button",
-          "checkbox",
-          "link",
-          "searchbox",
-          "spinbutton",
-          "switch",
-          "textbox",
-        ],
-      },
-    ],
-    "jsx-a11y/label-has-associated-control": "error",
-    "jsx-a11y/lang": "error",
-    "jsx-a11y/media-has-caption": "error",
-    "jsx-a11y/mouse-events-have-key-events": "error",
-    "jsx-a11y/no-access-key": "error",
-    "jsx-a11y/no-aria-hidden-on-focusable": "error",
-    "jsx-a11y/no-autofocus": "error",
-    "jsx-a11y/no-distracting-elements": "error",
-    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
-      "error",
-      {
-        canvas: ["img"],
-        tr: ["none", "presentation"],
-      },
-    ],
-    "jsx-a11y/no-noninteractive-element-interactions": [
-      "error",
-      {
-        alert: ["onKeyUp", "onKeyDown", "onKeyPress"],
-        body: ["onError", "onLoad"],
-        dialog: ["onKeyUp", "onKeyDown", "onKeyPress"],
-        handlers: [
-          "onClick",
-          "onError",
-          "onLoad",
-          "onMouseDown",
-          "onMouseUp",
-          "onKeyPress",
-          "onKeyDown",
-          "onKeyUp",
-        ],
-        iframe: ["onError", "onLoad"],
-        img: ["onError", "onLoad"],
-      },
-    ],
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
-      "error",
-      {
-        fieldset: ["radiogroup", "presentation"],
-        li: ["menuitem", "option", "row", "tab", "treeitem"],
-        ol: [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid",
-        ],
-        table: ["grid"],
-        td: ["gridcell"],
-        ul: [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid",
-        ],
-      },
-    ],
-    "jsx-a11y/no-noninteractive-tabindex": [
-      "error",
-      {
-        allowExpressionValues: true,
-        roles: ["tabpanel"],
-        tags: [],
-      },
-    ],
-    "jsx-a11y/no-redundant-roles": "error",
-    "jsx-a11y/no-static-element-interactions": [
-      "error",
-      {
-        allowExpressionValues: true,
-        handlers: [
-          "onClick",
-          "onMouseDown",
-          "onMouseUp",
-          "onKeyPress",
-          "onKeyDown",
-          "onKeyUp",
-        ],
-      },
-    ],
-    "jsx-a11y/prefer-tag-over-role": "error",
-    "jsx-a11y/role-has-required-aria-props": "error",
-    "jsx-a11y/role-supports-aria-props": "error",
-    "jsx-a11y/scope": "error",
-    "jsx-a11y/tabindex-no-positive": "error",
-
-    // jsx-a11y -- deprecated
-    "jsx-a11y/accessible-emoji": "off",
-    "jsx-a11y/label-has-for": "off",
-    "jsx-a11y/no-onchange": "off",
-    // #endregion
-
-    // #region react
     "react/boolean-prop-naming": "error",
     "react/button-has-type": "error",
     "react/checked-requires-onchange-or-readonly": "error",
@@ -331,17 +198,10 @@ export const reactConfig: Linter.FlatConfig = {
     "react/static-property-placement": "error",
     "react/style-prop-object": "error",
     "react/void-dom-elements-no-children": "error",
-    // #endregion
 
-    // #region deprecated
+    // Deprecated rules
     "react/jsx-sort-default-props": "off",
     "react/jsx-space-before-closing": "off",
-    // #endregion
-
-    // #region react-hooks
-    "react-hooks/exhaustive-deps": "error",
-    "react-hooks/rules-of-hooks": "error",
-    // #endregion
   },
   settings: {
     react: {

@@ -13,12 +13,12 @@ const main = async () => {
   const setRules = new Set<string>();
 
   for (const configFile of configFiles) {
-    const module = (await import(`../${configPath}/${configFile}`)) as Record<
-      string,
-      Linter.FlatConfig
-    >;
-    const [configKey] = Object.keys(module);
-    const config = module[configKey];
+    const eslintConfig = (await import(
+      `../${configPath}/${configFile}`
+    )) as Record<string, Linter.FlatConfig>;
+
+    const [configKey] = Object.keys(eslintConfig);
+    const config = eslintConfig[configKey];
 
     const pluginNames = config.plugins ? Object.keys(config.plugins) : [];
     const rules = config.rules ? Object.keys(config.rules) : [];

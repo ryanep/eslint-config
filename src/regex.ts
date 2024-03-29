@@ -6,6 +6,7 @@ export const regexConfig: Linter.FlatConfig = {
     regexp: regexpPlugin,
   },
   rules: {
+    // Disable conflicting built-in rules
     "no-control-regex": "error",
     "no-empty-character-class": "off",
     "no-invalid-regexp": "off",
@@ -13,6 +14,8 @@ export const regexConfig: Linter.FlatConfig = {
     "no-regex-spaces": "error",
     "no-useless-backreference": "off",
     "prefer-regex-literals": "error",
+
+    // Regexp rules
     "regexp/confusing-quantifier": "warn",
     "regexp/control-character-escape": "error",
     "regexp/grapheme-string-literal": "error",

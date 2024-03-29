@@ -7,7 +7,6 @@ export const testingLibraryConfig: Linter.FlatConfig = {
     "testing-library": testingLibraryPlugin,
   },
   rules: {
-    // #region testing-library
     "testing-library/await-async-events": "error",
     "testing-library/await-async-queries": "error",
     "testing-library/await-async-utils": "error",
@@ -35,6 +34,5 @@ export const testingLibraryConfig: Linter.FlatConfig = {
     "testing-library/prefer-screen-queries": "error",
     "testing-library/prefer-user-event": "error",
     "testing-library/render-result-naming-convention": "error",
-    // #endregion",
   },
 };

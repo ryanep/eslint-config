@@ -7,7 +7,6 @@ export const tailwindConfig: Linter.FlatConfig = {
     tailwindcss: tailwindPlugin,
   },
   rules: {
-    // #region tailwindcss
     "tailwindcss/classnames-order": "error",
     "tailwindcss/enforces-negative-arbitrary-values": "error",
     "tailwindcss/enforces-shorthand": "error",
@@ -15,6 +14,5 @@ export const tailwindConfig: Linter.FlatConfig = {
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-contradicting-classname": "error",
     "tailwindcss/no-custom-classname": "error",
-    // #endregion
   },
 };

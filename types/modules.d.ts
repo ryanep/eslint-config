@@ -1,6 +1,6 @@
 /**
  * This declaration file adds the missing types for eslint plugins/parsers. To
- * be removed when/if the types are added.
+ * be removed when/if the types are added to the plugin.
  */
 
 declare module "@typescript-eslint/parser" {

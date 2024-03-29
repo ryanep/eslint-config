@@ -14,8 +14,35 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint": typescriptPlugin,
   },
   rules: {
-    // #region @typescript-eslint
-    "@typescript-eslint/adjacent-overload-signatures": "off", // Replaced by perfectionist/sort-interfaces.
+    // Disable conflicting built-in rules
+    "default-param-last": "off",
+    "dot-notation": "off",
+    "init-declarations": "off",
+    "no-array-constructor": "off",
+    "no-dupe-class-members": "off",
+    "no-duplicate-imports": "off",
+    "no-empty-function": "off",
+    "no-extra-semi": "off",
+    "no-implied-eval": "off",
+    "no-invalid-this": "off",
+    "no-loop-func": "off",
+    "no-loss-of-precision": "off",
+    "no-magic-numbers": "off",
+    "no-redeclare": "off",
+    "no-restricted-imports": "off",
+    "no-return-await": "off",
+    "no-shadow": "off",
+    "no-throw-literal": "off",
+    "no-undef": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "no-useless-constructor": "off",
+    "prefer-promise-reject-errors": "off",
+    "require-await": "off",
+
+    // Typescript rules
+    "@typescript-eslint/adjacent-overload-signatures": "off",
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/ban-ts-comment": "error",
@@ -144,7 +171,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/restrict-template-expressions": "error",
     "@typescript-eslint/return-await": "off",
-    "@typescript-eslint/sort-type-constituents": "off", // Replaced by perfectionist/sort-union-types.
+    "@typescript-eslint/sort-type-constituents": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/switch-exhaustiveness-check": "off",
     "@typescript-eslint/triple-slash-reference": "error",
@@ -152,7 +179,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
 
-    // #region disable formatting rules.
+    // Disable formatting rules handled by prettier
     "@typescript-eslint/block-spacing": "off",
     "@typescript-eslint/brace-style": "off",
     "@typescript-eslint/class-methods-use-this": "off",
@@ -175,34 +202,5 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/space-infix-ops": "off",
     "@typescript-eslint/type-annotation-spacing": "off",
-    // #endregion
-
-    // #region disable base rules
-    "default-param-last": "off",
-    "dot-notation": "off",
-    "init-declarations": "off",
-    "no-array-constructor": "off",
-    "no-dupe-class-members": "off",
-    "no-duplicate-imports": "off",
-    "no-empty-function": "off",
-    "no-extra-semi": "off",
-    "no-implied-eval": "off",
-    "no-invalid-this": "off",
-    "no-loop-func": "off",
-    "no-loss-of-precision": "off",
-    "no-magic-numbers": "off",
-    "no-redeclare": "off",
-    "no-restricted-imports": "off",
-    "no-return-await": "off",
-    "no-shadow": "off",
-    "no-throw-literal": "off",
-    "no-undef": "off",
-    "no-unused-expressions": "off",
-    "no-unused-vars": "off",
-    "no-use-before-define": "off",
-    "no-useless-constructor": "off",
-    "prefer-promise-reject-errors": "off",
-    "require-await": "off",
-    // #endregion
   },
 };

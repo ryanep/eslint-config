@@ -2,12 +2,11 @@ import nextPlugin from "@next/eslint-plugin-next";
 import type { Linter } from "eslint";
 
 export const nextConfig: Linter.FlatConfig = {
-  files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
+  files: ["**/*.[jt]s?(x)"],
   plugins: {
     "@next/next": nextPlugin,
   },
   rules: {
-    // #region next
     "@next/next/google-font-display": "warn",
     "@next/next/google-font-preconnect": "warn",
     "@next/next/inline-script-id": "error",
@@ -29,6 +28,5 @@ export const nextConfig: Linter.FlatConfig = {
     "@next/next/no-title-in-document-head": "warn",
     "@next/next/no-typos": "error",
     "@next/next/no-unwanted-polyfillio": "error",
-    // #endregion
   },
 };

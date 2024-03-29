@@ -7,7 +7,8 @@ export const graphqlConfig: Linter.FlatConfig = {
     parser: graphqlPlugin,
     parserOptions: {
       operations: "**/*.graphql",
-      schema: "schema.graphql", // TODO: Make this configurable.
+      // TODO: Make schema path configurable.
+      schema: "**/schema.graphql",
     },
   },
   plugins: {

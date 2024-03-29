@@ -14,8 +14,8 @@
     "readme.md"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
-    "clean": "node -r ts-node/register ./scripts/clean",
+    "build": "npm run clean && tsc --project tsconfig.build.json",
+    "clean": "rm -rf ./lib",
     "dev": "nodemon",
     "format": "prettier --write .",
     "generate": "node -r ts-node/register ./scripts/generate",

@@ -1,29 +1,65 @@
 import { baseConfig } from "./base";
+import { builtInConfig } from "./built-in";
 import { graphqlConfig } from "./graphql";
 import { ignoresConfig } from "./ignores";
+import { importConfig } from "./import";
 import { jestConfig } from "./jest";
 import { jsonConfig } from "./json";
+import { jsxA11yConfig } from "./jsx-a11y";
 import { nextConfig } from "./next";
+import { perfectionistConfig } from "./perfectionist";
+import { prettierConfig } from "./prettier";
 import { reactConfig } from "./react";
+import { reactHooksConfig } from "./react-hooks";
 import { regexConfig } from "./regex";
 import { tailwindConfig } from "./tailwindcss";
 import { testingLibraryConfig } from "./testing-library";
 import { typescriptConfig } from "./typescript";
+import { unicornConfig } from "./unicorn";
 import { yamlConfig } from "./yaml";
+import type { Linter } from "eslint";
 
-export const createConfig = () => {
-  return [
+interface CreateConfigOptions {
+  isGraphql?: boolean;
+  isNext?: boolean;
+  isTailwind?: boolean;
+}
+
+export const createConfig = ({
+  isGraphql = true,
+  isNext = true,
+  isTailwind = true,
+}: CreateConfigOptions = {}): Linter.FlatConfig[] => {
+  const config = [
     baseConfig,
-    graphqlConfig,
+    builtInConfig,
+    ignoresConfig,
+    importConfig,
     jestConfig,
     jsonConfig,
-    nextConfig,
+    jsxA11yConfig,
+    perfectionistConfig,
+    prettierConfig,
     reactConfig,
-    tailwindConfig,
+    reactHooksConfig,
+    regexConfig,
     testingLibraryConfig,
     typescriptConfig,
+    unicornConfig,
     yamlConfig,
-    regexConfig,
-    ignoresConfig,
   ];
+
+  if (isGraphql) {
+    config.push(graphqlConfig);
+  }
+
+  if (isNext) {
+    config.push(nextConfig);
+  }
+
+  if (isTailwind) {
+    config.push(tailwindConfig);
+  }
+
+  return config;
 };
