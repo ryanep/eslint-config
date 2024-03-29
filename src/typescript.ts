@@ -146,6 +146,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/no-useless-template-literals": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/non-nullable-type-assertion-style": "error",
+    "@typescript-eslint/only-throw-error": "error",
     "@typescript-eslint/parameter-properties": "off",
     "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/prefer-destructuring": "error",
@@ -178,6 +179,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/typedef": "off",
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
 
     // Disable formatting rules handled by prettier
     "@typescript-eslint/block-spacing": "off",

@@ -14,5 +14,6 @@ export const tailwindConfig: Linter.FlatConfig = {
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-contradicting-classname": "error",
     "tailwindcss/no-custom-classname": "error",
+    "tailwindcss/no-unnecessary-arbitrary-value": "error",
   },
 };
