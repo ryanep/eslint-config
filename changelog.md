@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/ryanep/eslint-config/compare/v0.11.0...v1.0.0) (2024-03-29)
+
+
+### Features
+
+* upgrade dependencies ([8c88103](https://github.com/ryanep/eslint-config/commit/8c8810303b7170ff74cbd17c09c2d430889c3991))
+
+
+### BREAKING CHANGES
+
+* new tailwind and typescript rules added and enabled
+
 # [0.11.0](https://github.com/ryanep/eslint-config/compare/v0.10.0...v0.11.0) (2024-03-29)
 
 
