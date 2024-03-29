@@ -1,3 +1,11 @@
+# [0.11.0](https://github.com/ryanep/eslint-config/compare/v0.10.0...v0.11.0) (2024-03-29)
+
+
+### Features
+
+* add new react and typescript rules ([08bbaa4](https://github.com/ryanep/eslint-config/commit/08bbaa458468cabc35a69ee1cc92cce51e848b8e))
+* split config by plugin ([f70d82a](https://github.com/ryanep/eslint-config/commit/f70d82a05582693e8dd84dbf8451f4fbf1b74cc0))
+
 # [0.10.0](https://github.com/ryanep/eslint-config/compare/v0.9.1...v0.10.0) (2024-02-11)
 
 
