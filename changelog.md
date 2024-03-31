@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ryanep/eslint-config/compare/v1.0.0...v1.1.0) (2024-03-31)
+
+
+### Features
+
+* build esm and cjs versions ([7e5e1c3](https://github.com/ryanep/eslint-config/commit/7e5e1c3c36825ca2de8ef10ef8d9518f349f2bae))
+
 # [1.0.0](https://github.com/ryanep/eslint-config/compare/v0.11.0...v1.0.0) (2024-03-29)
 
 
