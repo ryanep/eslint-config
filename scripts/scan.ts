@@ -60,4 +60,6 @@ const main = async () => {
   console.timeEnd();
 };
 
-main().catch(console.error);
+main().catch((error: unknown) => {
+  console.error(error);
+});

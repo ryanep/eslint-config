@@ -1,8 +1,10 @@
-/* eslint-disable unicorn/prefer-module */
-const { createConfig } = require("./lib");
+// @ts-check
+import { createConfig } from "./lib/index.js";
 
-module.exports = createConfig({
+const eslintConfig = createConfig({
   isGraphql: false,
   isNext: false,
   isTailwind: false,
 });
+
+export default eslintConfig;
