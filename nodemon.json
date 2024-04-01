@@ -1,6 +1,0 @@
-{
-  "exec": "make build",
-  "watch": ["src"],
-  "ext": "ts",
-  "delay": "1000"
-}
