@@ -9,4 +9,7 @@ export const baseConfig: Linter.FlatConfig = {
       ...globals.node,
     },
   },
+  linterOptions: {
+    reportUnusedDisableDirectives: "error",
+  },
 };
