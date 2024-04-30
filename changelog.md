@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ryanep/eslint-config/compare/v1.1.0...v1.2.0) (2024-04-30)
+
+
+### Features
+
+* enable report unused disable directives option ([6be00a8](https://github.com/ryanep/eslint-config/commit/6be00a83e2c93f367b751336ff62311eaec317e8))
+
 # [1.1.0](https://github.com/ryanep/eslint-config/compare/v1.0.0...v1.1.0) (2024-03-31)
 
 
