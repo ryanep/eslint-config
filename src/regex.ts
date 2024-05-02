@@ -96,6 +96,7 @@ export const regexConfig: Linter.FlatConfig = {
     "regexp/sort-flags": "error",
     "regexp/strict": "error",
     "regexp/unicode-escape": "error",
+    "regexp/unicode-property": "error",
     "regexp/use-ignore-case": "error",
   },
 };

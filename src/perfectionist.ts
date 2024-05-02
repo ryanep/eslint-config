@@ -33,6 +33,7 @@ export const perfectionistConfig: Linter.FlatConfig = {
       },
     ],
     "perfectionist/sort-interfaces": "error",
+    "perfectionist/sort-intersection-types": "error",
     "perfectionist/sort-jsx-props": "error",
     "perfectionist/sort-maps": "error",
     "perfectionist/sort-named-exports": "error",
