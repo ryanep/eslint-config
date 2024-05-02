@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ryanep/eslint-config/compare/v1.2.0...v1.3.0) (2024-05-02)
+
+
+### Features
+
+* upgrade dependencies and enable new rules ([6ad1ab4](https://github.com/ryanep/eslint-config/commit/6ad1ab42d5dab77ec67b7140db308510076fd8b3))
+
 # [1.2.0](https://github.com/ryanep/eslint-config/compare/v1.1.0...v1.2.0) (2024-04-30)
 
 
