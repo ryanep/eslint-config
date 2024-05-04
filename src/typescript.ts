@@ -98,6 +98,7 @@ export const typescriptConfig: Linter.FlatConfig = {
       {
         checksVoidReturn: {
           arguments: false,
+          attributes: false,
         },
       },
     ],
