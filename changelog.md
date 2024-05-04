@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ryanep/eslint-config/compare/v1.3.0...v1.3.1) (2024-05-04)
+
+
+### Bug Fixes
+
+* update @typescript-eslint/no-misused-promises rule check void return option ([2a07d89](https://github.com/ryanep/eslint-config/commit/2a07d898b67b1b72b0f50944b3a8f7deb69cb5c6))
+
 # [1.3.0](https://github.com/ryanep/eslint-config/compare/v1.2.0...v1.3.0) (2024-05-02)
 
 
