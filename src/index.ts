@@ -34,7 +34,7 @@ export const createConfig = ({
     baseConfig,
     builtInConfig,
     ignoresConfig,
-    importConfig,
+    ...importConfig,
     jestConfig,
     jsonConfig,
     jsxA11yConfig,
