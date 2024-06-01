@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/ryanep/eslint-config/compare/v1.3.1...v1.4.0) (2024-06-01)
+
+
+### Features
+
+* disable import/no-default-export for specific files ([37b79f4](https://github.com/ryanep/eslint-config/commit/37b79f49ac0d2805664b1eea4b333219f4fd61b6))
+* disable tailwindcss/no-arbitrary-value rule ([48e2f69](https://github.com/ryanep/eslint-config/commit/48e2f697c6e94a29675477a7c3cd985d4eb8a953))
+* enable new unicorn rules ([b92dd4b](https://github.com/ryanep/eslint-config/commit/b92dd4b706b1a9750d1f6943bde90061c08cee44))
+
 ## [1.3.1](https://github.com/ryanep/eslint-config/compare/v1.3.0...v1.3.1) (2024-05-04)
 
 
