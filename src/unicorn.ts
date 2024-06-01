@@ -126,6 +126,13 @@ export const unicornConfig: Linter.FlatConfig = {
     "unicorn/text-encoding-identifier-case": "error",
     "unicorn/throw-new-error": "error",
 
+    // Review rules
+    "unicorn/consistent-empty-array-spread": "off",
+    "unicorn/no-invalid-fetch-options": "off",
+    "unicorn/no-magic-array-flat-depth": "off",
+    "unicorn/prefer-string-raw": "off",
+    "unicorn/prefer-structured-clone": "off",
+
     // Deprecated rules
     "unicorn/import-index": "off",
     "unicorn/no-array-instanceof": "off",
