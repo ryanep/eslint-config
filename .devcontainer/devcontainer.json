@@ -1,0 +1,24 @@
+{
+  "name": "@ryanep/eslint-config",
+  "build": {
+    "dockerfile": "./dockerfile"
+  },
+  "postCreateCommand": "npm install",
+  "remoteUser": "node",
+  "features": {
+    "git": "latest",
+    "node": "20.12.0"
+  },
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "chrmarti.regex",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "waderyan.gitblame"
+      ]
+    }
+  }
+}

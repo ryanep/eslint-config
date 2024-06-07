@@ -1,3 +1,4 @@
-node_modules
-lib
+.devcontainer/devcontainer.env
 *.log
+lib
+node_modules
