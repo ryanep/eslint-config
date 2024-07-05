@@ -47,6 +47,7 @@ export const jestConfig: Linter.FlatConfig = {
     "jest/prefer-hooks-in-order": "error",
     "jest/prefer-hooks-on-top": "error",
     "jest/prefer-importing-jest-globals": "off",
+    "jest/prefer-jest-mocked": "error",
     "jest/prefer-lowercase-title": "error",
     "jest/prefer-mock-promise-shorthand": "error",
     "jest/prefer-snapshot-hint": "error",

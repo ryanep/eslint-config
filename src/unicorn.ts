@@ -42,6 +42,7 @@ export const unicornConfig: Linter.FlatConfig = {
     "unicorn/no-lonely-if": "error",
     "unicorn/no-magic-array-flat-depth": "error",
     "unicorn/no-negated-condition": "off",
+    "unicorn/no-negation-in-equality-check": "error",
     "unicorn/no-nested-ternary": "error",
     "unicorn/no-new-array": "off",
     "unicorn/no-new-buffer": "error",
