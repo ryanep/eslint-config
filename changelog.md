@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ryanep/eslint-config/compare/v1.4.0...v1.5.0) (2024-07-05)
+
+
+### Features
+
+* enable new typescript, jest and unicorn rules ([2626b06](https://github.com/ryanep/eslint-config/commit/2626b064db2a0d7d478d52a46dc55e2724c98c7d))
+
 # [1.4.0](https://github.com/ryanep/eslint-config/compare/v1.3.1...v1.4.0) (2024-06-01)
 
 
