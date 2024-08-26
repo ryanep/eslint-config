@@ -134,6 +134,7 @@ export const reactConfig: Linter.FlatConfig = {
       },
     ],
     "react/jsx-props-no-multi-spaces": "error",
+    "react/jsx-props-no-spread-multi": "error",
     "react/jsx-props-no-spreading": "error",
     "react/jsx-sort-props": "off", // Replaced by perfectionist/sort-jsx-props.
     "react/jsx-tag-spacing": [

@@ -15,7 +15,7 @@ export const perfectionistConfig: Linter.FlatConfig = {
     "perfectionist/sort-imports": [
       "error",
       {
-        "groups": [
+        groups: [
           "side-effect",
           "builtin",
           "external",
@@ -27,9 +27,9 @@ export const perfectionistConfig: Linter.FlatConfig = {
           "object",
           "unknown",
         ],
-        "internal-pattern": ["#/**", "@/**"],
-        "newlines-between": "never",
-        "type": "natural",
+        internalPattern: ["#/**", "@/**"],
+        newlinesBetween: "never",
+        type: "natural",
       },
     ],
     "perfectionist/sort-interfaces": "error",
@@ -42,11 +42,13 @@ export const perfectionistConfig: Linter.FlatConfig = {
     "perfectionist/sort-objects": [
       "error",
       {
-        "partition-by-comment": true,
+        partitionByComment: true,
       },
     ],
     "perfectionist/sort-svelte-attributes": "error",
+    "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
+    "perfectionist/sort-variable-declarations": "error",
     "perfectionist/sort-vue-attributes": "error",
   },
 };

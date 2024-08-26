@@ -28,29 +28,29 @@
     "scan": "tsx ./scripts/scan"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.24.7",
+    "@babel/eslint-parser": "^7.25.1",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
-    "@next/eslint-plugin-next": "^14.2.4",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-cypress": "^3.3.0",
+    "@next/eslint-plugin-next": "^14.2.6",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-cypress": "^3.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^28.6.0",
-    "eslint-plugin-jsdoc": "^48.5.2",
+    "eslint-plugin-jest": "^28.8.0",
+    "eslint-plugin-jsdoc": "^50.2.2",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.9.0",
-    "eslint-plugin-perfectionist": "^2.11.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-perfectionist": "^3.2.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
-    "eslint-plugin-testing-library": "^6.2.2",
-    "eslint-plugin-unicorn": "^54.0.0",
+    "eslint-plugin-testing-library": "^6.3.0",
+    "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-yml": "^1.14.0",
-    "globals": "^15.8.0",
+    "globals": "^15.9.0",
     "jsonc-eslint-parser": "^2.4.0",
     "yaml-eslint-parser": "^1.2.3"
   },
@@ -78,6 +78,6 @@
   },
   "overrides": {
     "prettier": "^3.3.3",
-    "@typescript-eslint/parser": "^7.15.0"
+    "@typescript-eslint/parser": "^8.3.0"
   }
 }
