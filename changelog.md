@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/ryanep/eslint-config/compare/v1.5.0...v1.6.0) (2024-08-26)
+
+
+### Features
+
+* upgrade dependencies ([871851a](https://github.com/ryanep/eslint-config/commit/871851a38fec2e7cb8885bb61c6afd619bb0ec64))
+
 # [1.5.0](https://github.com/ryanep/eslint-config/compare/v1.4.0...v1.5.0) (2024-07-05)
 
 
