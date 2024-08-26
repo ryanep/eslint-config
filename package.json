@@ -55,7 +55,7 @@
     "yaml-eslint-parser": "^1.2.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
+    "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@ryanep/prettier-config": "^1.1.1",
     "@semantic-release/changelog": "^6.0.3",
@@ -65,19 +65,19 @@
     "@semantic-release/release-notes-generator": "^14.0.1",
     "@types/eslint": "^8.56.10",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.9",
+    "@types/node": "^22.5.0",
     "eslint": "^8.57.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "semantic-release": "^24.0.0",
-    "sort-package-json": "^2.10.0",
-    "tsup": "^8.1.0",
-    "tsx": "^4.16.2",
-    "typescript": "^5.5.3"
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "semantic-release": "^24.1.0",
+    "sort-package-json": "^2.10.1",
+    "tsup": "^8.2.4",
+    "tsx": "^4.18.0",
+    "typescript": "^5.5.4"
   },
   "overrides": {
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "@typescript-eslint/parser": "^7.15.0"
   }
 }
