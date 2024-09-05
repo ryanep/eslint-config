@@ -35,7 +35,13 @@ export const yamlConfig: Linter.FlatConfig = {
     "yml/plain-scalar": "error",
     "yml/quotes": "error",
     "yml/require-string-key": "error",
-    "yml/sort-keys": "error",
+    "yml/sort-keys": [
+      "error",
+      "asc",
+      {
+        allowLineSeparatedGroups: true,
+      },
+    ],
     "yml/sort-sequence-values": [
       "error",
       { order: { type: "asc" }, pathPattern: ".*" },

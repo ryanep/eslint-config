@@ -1,4 +1,6 @@
 
+name: Release
+
 jobs:
   release:
     name: Release
@@ -26,10 +28,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         name: Release
         run: npm run release
-name: Release
-
 on: workflow_dispatch
-
-permissions:
-  contents: read
-
