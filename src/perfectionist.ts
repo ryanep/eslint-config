@@ -45,6 +45,7 @@ export const perfectionistConfig: Linter.FlatConfig = {
         partitionByComment: true,
       },
     ],
+    "perfectionist/sort-sets": "error",
     "perfectionist/sort-svelte-attributes": "error",
     "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
