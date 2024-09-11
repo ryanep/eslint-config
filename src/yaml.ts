@@ -1,5 +1,5 @@
 import yamlPlugin from "eslint-plugin-yml";
-import * as yamlParser from "yaml-eslint-parser";
+import yamlParser from "yaml-eslint-parser";
 import type { Linter } from "eslint";
 
 export const yamlConfig: Linter.FlatConfig = {

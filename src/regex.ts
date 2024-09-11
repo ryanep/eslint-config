@@ -1,4 +1,4 @@
-import * as regexpPlugin from "eslint-plugin-regexp";
+import regexpPlugin from "eslint-plugin-regexp";
 import type { Linter } from "eslint";
 
 export const regexConfig: Linter.FlatConfig = {

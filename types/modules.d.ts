@@ -3,36 +3,6 @@
  * be removed when/if the types are added to the plugin.
  */
 
-declare module "@typescript-eslint/parser" {
-  import type { Linter } from "eslint";
-
-  declare const eslintParser: NonNullable<
-    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
-  >;
-
-  export = eslintParser;
-}
-
-declare module "jsonc-eslint-parser" {
-  import type { Linter } from "eslint";
-
-  declare const eslintParser: NonNullable<
-    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
-  >;
-
-  export = eslintParser;
-}
-
-declare module "yaml-eslint-parser" {
-  import type { Linter } from "eslint";
-
-  declare const eslintParser: NonNullable<
-    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
-  >;
-
-  export = eslintParser;
-}
-
 declare module "@graphql-eslint/eslint-plugin" {
   import type { Linter } from "eslint";
 
@@ -41,14 +11,6 @@ declare module "@graphql-eslint/eslint-plugin" {
   >;
 
   export = eslintParser;
-}
-
-declare module "eslint-plugin-regexp" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
 }
 
 declare module "eslint-plugin-yml" {
@@ -75,22 +37,6 @@ declare module "@typescript-eslint/eslint-plugin" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-cypress" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-eslint-comments" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-import" {
   import type { ESLint } from "eslint";
 
@@ -100,14 +46,6 @@ declare module "eslint-plugin-import" {
 }
 
 declare module "eslint-plugin-jest" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-jsdoc" {
   import type { ESLint } from "eslint";
 
   declare const eslintPlugin: ESLint.Plugin;
@@ -139,23 +77,7 @@ declare module "eslint-plugin-react" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-tailwindcss" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-testing-library" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-unicorn" {
   import type { ESLint } from "eslint";
 
   declare const eslintPlugin: ESLint.Plugin;

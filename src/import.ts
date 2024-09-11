@@ -1,4 +1,4 @@
-import * as importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import";
 import type { Linter } from "eslint";
 
 export const importConfig: Linter.FlatConfig[] = [
