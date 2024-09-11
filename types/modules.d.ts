@@ -123,14 +123,6 @@ declare module "eslint-plugin-jsonc" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-jsx-a11y" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-react-hooks" {
   import type { ESLint } from "eslint";
 
