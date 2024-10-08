@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.25.1",
+    "@eslint/compat": "^1.2.0",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@next/eslint-plugin-next": "^14.2.9",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
@@ -62,12 +63,12 @@
     "@semantic-release/github": "^10.3.3",
     "@semantic-release/npm": "^12.0.1",
     "@semantic-release/release-notes-generator": "^14.0.1",
-    "@types/eslint": "^8.56.10",
+    "@types/eslint": "^9.6.1",
     "@types/eslint-plugin-jsx-a11y": "^6.9.0",
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.5.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.12.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
@@ -76,5 +77,8 @@
     "tsup": "^8.2.4",
     "tsx": "^4.19.0",
     "typescript": "^5.6.2"
+  },
+  "overrides": {
+    "eslint": "^9.12.0"
   }
 }

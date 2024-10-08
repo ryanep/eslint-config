@@ -1,10 +1,11 @@
+import { fixupPluginRules } from "@eslint/compat";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import type { Linter } from "eslint";
 
 export const testingLibraryConfig: Linter.FlatConfig = {
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
   plugins: {
-    "testing-library": testingLibraryPlugin,
+    "testing-library": fixupPluginRules(testingLibraryPlugin),
   },
   rules: {
     "testing-library/await-async-events": "error",

@@ -1,10 +1,11 @@
+import { fixupPluginRules } from "@eslint/compat";
 import importPlugin from "eslint-plugin-import";
 import type { Linter } from "eslint";
 
 export const importConfig: Linter.FlatConfig[] = [
   {
     plugins: {
-      import: importPlugin,
+      import: fixupPluginRules(importPlugin),
     },
     rules: {
       "import/export": "error",
@@ -91,7 +92,7 @@ export const importConfig: Linter.FlatConfig[] = [
       "**/*.d.ts",
     ],
     plugins: {
-      import: importPlugin,
+      import: fixupPluginRules(importPlugin),
     },
     rules: {
       "import/no-default-export": "off",
