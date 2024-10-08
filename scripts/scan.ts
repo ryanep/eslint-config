@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
-import { Linter } from "eslint";
+import eslintUnsafe from "eslint/use-at-your-own-risk";
+import type { Linter } from "eslint";
 
 const configPath = "./src";
 
@@ -8,8 +9,8 @@ const main = async () => {
 
   const configFiles = await fs.readdir(configPath);
 
-  const builtInRules = [...new Linter().getRules().keys()];
-  const allRules = new Set<string>(builtInRules);
+  const builtinRules = eslintUnsafe.builtinRules.keys();
+  const allRules = new Set<string>(builtinRules);
   const setRules = new Set<string>();
 
   for (const configFile of configFiles) {
