@@ -26,7 +26,7 @@ export const perfectionistConfig: Linter.FlatConfig = {
           "object",
           "unknown",
         ],
-        internamePattern: ["^~/.*", "^#/.*", "^@/.*"],
+        internalPattern: ["^~/.*", "^#/.*", "^@/.*"],
         newlinesBetween: "never",
         type: "natural",
       },
