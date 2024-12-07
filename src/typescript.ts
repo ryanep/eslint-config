@@ -187,5 +187,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
+    "@typescript-eslint/no-unsafe-type-assertion": "error",
+    "@typescript-eslint/related-getter-setter-pairs": "error",
   },
 };

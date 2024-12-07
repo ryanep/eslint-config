@@ -68,7 +68,6 @@ export const graphqlConfig: Linter.FlatConfig = {
       },
     ],
     "@graphql-eslint/no-anonymous-operations": "error",
-    "@graphql-eslint/no-case-insensitive-enum-values-duplicates": "error",
     "@graphql-eslint/no-deprecated": "off",
     "@graphql-eslint/no-duplicate-fields": "error",
     "@graphql-eslint/no-fragment-cycles": "error",
@@ -95,7 +94,6 @@ export const graphqlConfig: Linter.FlatConfig = {
     "@graphql-eslint/require-deprecation-reason": "error",
     "@graphql-eslint/require-description": "off",
     "@graphql-eslint/require-field-of-type-query-in-mutation-result": "off",
-    "@graphql-eslint/require-id-when-available": "error",
     "@graphql-eslint/require-import-fragment": "error",
     "@graphql-eslint/require-nullable-fields-with-oneof": "error",
     "@graphql-eslint/require-nullable-result-in-root": "off",
@@ -117,5 +115,6 @@ export const graphqlConfig: Linter.FlatConfig = {
     "@graphql-eslint/value-literals-of-correct-type": "error",
     "@graphql-eslint/variables-are-input-types": "error",
     "@graphql-eslint/variables-in-allowed-position": "error",
+    "@graphql-eslint/require-selections": "error",
   },
 };

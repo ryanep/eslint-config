@@ -8,7 +8,6 @@ export const perfectionistConfig: Linter.FlatConfig = {
   },
   rules: {
     "perfectionist/sort-array-includes": "error",
-    "perfectionist/sort-astro-attributes": "error",
     "perfectionist/sort-classes": "error",
     "perfectionist/sort-enums": "error",
     "perfectionist/sort-exports": "error",
@@ -46,10 +45,11 @@ export const perfectionistConfig: Linter.FlatConfig = {
       },
     ],
     "perfectionist/sort-sets": "error",
-    "perfectionist/sort-svelte-attributes": "error",
     "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
-    "perfectionist/sort-vue-attributes": "error",
+    "perfectionist/sort-heritage-clauses": "error",
+    "perfectionist/sort-decorators": "error",
+    "perfectionist/sort-modules": "error",
   },
 };
