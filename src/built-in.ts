@@ -1,6 +1,6 @@
 import type { Linter } from "eslint";
 
-export const builtInConfig: Linter.FlatConfig = {
+export const builtInConfig: Linter.Config = {
   files: ["**/*.[jt]s?(x)"],
   rules: {
     "constructor-super": "error",
@@ -57,6 +57,7 @@ export const builtInConfig: Linter.FlatConfig = {
     "no-shadow-restricted-names": "error",
     "no-sparse-arrays": "error",
     "no-this-before-super": "error",
+    "no-unassigned-vars": "error",
     "no-undef": "error",
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",

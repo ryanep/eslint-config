@@ -14,9 +14,10 @@ const main = async () => {
   const setRules = new Set<string>();
 
   for (const configFile of configFiles) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     const eslintConfig = (await import(
       `../${configPath}/${configFile}`
-    )) as Record<string, Linter.FlatConfig>;
+    )) as Record<string, Linter.Config>;
 
     const [configKey] = Object.keys(eslintConfig);
     const config = eslintConfig[configKey];

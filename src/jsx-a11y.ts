@@ -1,7 +1,7 @@
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import type { Linter } from "eslint";
 
-export const jsxA11yConfig: Linter.FlatConfig = {
+export const jsxA11yConfig: Linter.Config = {
   files: ["**/*.{jsx,tsx}"],
   plugins: {
     "jsx-a11y": jsxA11yPlugin,

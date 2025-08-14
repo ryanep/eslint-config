@@ -1,7 +1,7 @@
 import unicornPlugin from "eslint-plugin-unicorn";
 import type { Linter } from "eslint";
 
-export const unicornConfig: Linter.FlatConfig = {
+export const unicornConfig: Linter.Config = {
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     unicorn: unicornPlugin,
@@ -51,7 +51,6 @@ export const unicornConfig: Linter.FlatConfig = {
     "unicorn/no-null": "off",
     "unicorn/no-object-as-default-parameter": "error",
     "unicorn/no-process-exit": "error",
-    "unicorn/no-reduce": "off",
     "unicorn/no-single-promise-in-promise-methods": "error",
     "unicorn/no-static-only-class": "error",
     "unicorn/no-thenable": "error",
@@ -61,7 +60,6 @@ export const unicornConfig: Linter.FlatConfig = {
     "unicorn/no-unnecessary-polyfills": "off",
     "unicorn/no-unreadable-array-destructuring": "error",
     "unicorn/no-unreadable-iife": "error",
-    "unicorn/no-unsafe-regex": "off",
     "unicorn/no-unused-properties": "off",
     "unicorn/no-useless-fallback-in-spread": "error",
     "unicorn/no-useless-length-check": "error",
@@ -136,21 +134,20 @@ export const unicornConfig: Linter.FlatConfig = {
     "unicorn/text-encoding-identifier-case": "error",
     "unicorn/throw-new-error": "error",
 
-    // Deprecated rules
-    "unicorn/import-index": "off",
-    "unicorn/no-array-instanceof": "off",
-    "unicorn/no-fn-reference-in-iterator": "off",
-    "unicorn/prefer-dataset": "off",
-    "unicorn/prefer-event-key": "off",
-    "unicorn/prefer-exponentiation-operator": "off",
-    "unicorn/prefer-flat-map": "off",
-    "unicorn/prefer-node-append": "off",
-    "unicorn/prefer-node-remove": "off",
-    "unicorn/prefer-object-has-own": "off",
-    "unicorn/prefer-replace-all": "off",
-    "unicorn/prefer-starts-ends-with": "off",
-    "unicorn/prefer-text-content": "off",
-    "unicorn/prefer-trim-start-end": "off",
-    "unicorn/regex-shorthand": "off",
+    // TODO: Review new rules
+    "unicorn/consistent-assert": "off",
+    "unicorn/consistent-date-clone": "off",
+    "unicorn/no-accessor-recursion": "off",
+    "unicorn/no-array-reverse": "off",
+    "unicorn/no-instanceof-builtins": "off",
+    "unicorn/no-named-default": "off",
+    "unicorn/no-unnecessary-array-flat-depth": "off",
+    "unicorn/no-unnecessary-array-splice-count": "off",
+    "unicorn/no-unnecessary-slice-end": "off",
+    "unicorn/no-useless-error-capture-stack-trace": "off",
+    "unicorn/prefer-class-fields": "off",
+    "unicorn/prefer-import-meta-properties": "off",
+    "unicorn/prefer-single-call": "off",
+    "unicorn/require-module-specifiers": "off",
   },
 };

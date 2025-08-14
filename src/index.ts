@@ -29,7 +29,7 @@ export const createConfig = ({
   isGraphql = true,
   isNext = true,
   isTailwind = true,
-}: CreateConfigOptions = {}): Linter.FlatConfig[] => {
+}: CreateConfigOptions = {}): Linter.Config[] => {
   const config = [
     baseConfig,
     builtInConfig,

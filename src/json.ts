@@ -2,7 +2,7 @@ import jsonPlugin from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
 import type { Linter } from "eslint";
 
-export const jsonConfig: Linter.FlatConfig = {
+export const jsonConfig: Linter.Config = {
   files: ["*.json", "*.json5", "*.jsonc"],
   languageOptions: {
     parser: jsonParser,

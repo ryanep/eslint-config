@@ -2,7 +2,7 @@ import { fixupPluginRules } from "@eslint/compat";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import type { Linter } from "eslint";
 
-export const testingLibraryConfig: Linter.FlatConfig = {
+export const testingLibraryConfig: Linter.Config = {
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
   plugins: {
     "testing-library": fixupPluginRules(testingLibraryPlugin),
@@ -22,6 +22,7 @@ export const testingLibraryConfig: Linter.FlatConfig = {
     "testing-library/no-node-access": "error",
     "testing-library/no-promise-in-fire-event": "error",
     "testing-library/no-render-in-lifecycle": "error",
+    "testing-library/no-test-id-queries": "off",
     "testing-library/no-unnecessary-act": "error",
     "testing-library/no-wait-for-multiple-assertions": "error",
     "testing-library/no-wait-for-side-effects": "error",

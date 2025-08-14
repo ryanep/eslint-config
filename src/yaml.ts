@@ -2,7 +2,7 @@ import yamlPlugin from "eslint-plugin-yml";
 import yamlParser from "yaml-eslint-parser";
 import type { Linter } from "eslint";
 
-export const yamlConfig: Linter.FlatConfig = {
+export const yamlConfig: Linter.Config = {
   files: ["**/*.{yml,yaml}"],
   languageOptions: {
     parser: yamlParser,

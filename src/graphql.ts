@@ -1,7 +1,7 @@
 import * as graphqlPlugin from "@graphql-eslint/eslint-plugin";
 import type { Linter } from "eslint";
 
-export const graphqlConfig: Linter.FlatConfig = {
+export const graphqlConfig: Linter.Config = {
   files: ["**/*.{graphql,gql}"],
   languageOptions: {
     parser: graphqlPlugin,
@@ -97,6 +97,7 @@ export const graphqlConfig: Linter.FlatConfig = {
     "@graphql-eslint/require-import-fragment": "error",
     "@graphql-eslint/require-nullable-fields-with-oneof": "error",
     "@graphql-eslint/require-nullable-result-in-root": "off",
+    "@graphql-eslint/require-selections": "error",
     "@graphql-eslint/require-type-pattern-with-oneof": "error",
     "@graphql-eslint/scalar-leafs": "error",
     "@graphql-eslint/selection-set-depth": ["error", { maxDepth: 5 }],
@@ -115,6 +116,5 @@ export const graphqlConfig: Linter.FlatConfig = {
     "@graphql-eslint/value-literals-of-correct-type": "error",
     "@graphql-eslint/variables-are-input-types": "error",
     "@graphql-eslint/variables-in-allowed-position": "error",
-    "@graphql-eslint/require-selections": "error",
   },
 };

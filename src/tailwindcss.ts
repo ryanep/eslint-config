@@ -1,7 +1,7 @@
 import tailwindPlugin from "eslint-plugin-tailwindcss";
 import type { Linter } from "eslint";
 
-export const tailwindConfig: Linter.FlatConfig = {
+export const tailwindConfig: Linter.Config = {
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     tailwindcss: tailwindPlugin,

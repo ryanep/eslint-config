@@ -2,7 +2,7 @@ import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import type { Linter } from "eslint";
 
-export const typescriptConfig: Linter.FlatConfig = {
+export const typescriptConfig: Linter.Config = {
   files: ["**/*.{ts,tsx}"],
   languageOptions: {
     parser: typescriptParser,
@@ -103,6 +103,7 @@ export const typescriptConfig: Linter.FlatConfig = {
         },
       },
     ],
+    "@typescript-eslint/no-misused-spread": "error",
     "@typescript-eslint/no-mixed-enums": "error",
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
@@ -134,6 +135,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/no-unnecessary-type-conversion": "error",
     "@typescript-eslint/no-unnecessary-type-parameters": "off",
     "@typescript-eslint/no-unsafe-argument": "error",
     "@typescript-eslint/no-unsafe-assignment": "error",
@@ -143,6 +145,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
     "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-type-assertion": "error",
     "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-unused-vars": "error",
@@ -174,6 +177,7 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/prefer-string-starts-ends-with": "error",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/promise-function-async": "off",
+    "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/require-array-sort-compare": "off",
     "@typescript-eslint/require-await": "error",
     "@typescript-eslint/restrict-plus-operands": "error",
@@ -187,7 +191,5 @@ export const typescriptConfig: Linter.FlatConfig = {
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
-    "@typescript-eslint/no-unsafe-type-assertion": "error",
-    "@typescript-eslint/related-getter-setter-pairs": "error",
   },
 };

@@ -2,7 +2,7 @@ import { fixupPluginRules } from "@eslint/compat";
 import importPlugin from "eslint-plugin-import";
 import type { Linter } from "eslint";
 
-export const importConfig: Linter.FlatConfig[] = [
+export const importConfig: Linter.Config[] = [
   {
     plugins: {
       import: fixupPluginRules(importPlugin),

@@ -1,7 +1,7 @@
 import perfectionistPlugin from "eslint-plugin-perfectionist";
 import type { Linter } from "eslint";
 
-export const perfectionistConfig: Linter.FlatConfig = {
+export const perfectionistConfig: Linter.Config = {
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     perfectionist: perfectionistPlugin,
@@ -9,8 +9,10 @@ export const perfectionistConfig: Linter.FlatConfig = {
   rules: {
     "perfectionist/sort-array-includes": "error",
     "perfectionist/sort-classes": "error",
+    "perfectionist/sort-decorators": "error",
     "perfectionist/sort-enums": "error",
     "perfectionist/sort-exports": "error",
+    "perfectionist/sort-heritage-clauses": "error",
     "perfectionist/sort-imports": [
       "error",
       {
@@ -35,6 +37,7 @@ export const perfectionistConfig: Linter.FlatConfig = {
     "perfectionist/sort-intersection-types": "error",
     "perfectionist/sort-jsx-props": "error",
     "perfectionist/sort-maps": "error",
+    "perfectionist/sort-modules": "error",
     "perfectionist/sort-named-exports": "error",
     "perfectionist/sort-named-imports": "error",
     "perfectionist/sort-object-types": "error",
@@ -48,8 +51,5 @@ export const perfectionistConfig: Linter.FlatConfig = {
     "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
-    "perfectionist/sort-heritage-clauses": "error",
-    "perfectionist/sort-decorators": "error",
-    "perfectionist/sort-modules": "error",
   },
 };

@@ -2,7 +2,7 @@ import reactPlugin from "eslint-plugin-react";
 import globals from "globals";
 import type { Linter } from "eslint";
 
-export const reactConfig: Linter.FlatConfig = {
+export const reactConfig: Linter.Config = {
   files: ["**/*.{jsx,tsx}"],
   languageOptions: {
     globals: globals.browser,

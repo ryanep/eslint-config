@@ -1,6 +1,6 @@
 import type { Linter } from "eslint";
 
-export const ignoresConfig: Linter.FlatConfig = {
+export const ignoresConfig: Linter.Config = {
   ignores: [
     "**/.cache",
     "**/.changeset",

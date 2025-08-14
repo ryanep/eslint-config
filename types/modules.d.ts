@@ -7,7 +7,7 @@ declare module "@graphql-eslint/eslint-plugin" {
   import type { Linter } from "eslint";
 
   declare const eslintParser: NonNullable<
-    NonNullable<Linter.FlatConfig["languageOptions"]>["parser"]
+    NonNullable<Linter.Config["languageOptions"]>["parser"]
   >;
 
   export = eslintParser;
