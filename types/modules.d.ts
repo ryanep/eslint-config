@@ -4,13 +4,11 @@
  */
 
 declare module "@graphql-eslint/eslint-plugin" {
-  import type { Linter } from "eslint";
+  import type { ESLint } from "eslint";
 
-  declare const eslintParser: NonNullable<
-    NonNullable<Linter.Config["languageOptions"]>["parser"]
-  >;
+  declare const eslintPlugin: ESLint.Plugin;
 
-  export = eslintParser;
+  export = eslintPlugin;
 }
 
 declare module "eslint-plugin-yml" {

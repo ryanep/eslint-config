@@ -1,7 +1,7 @@
 import perfectionistPlugin from "eslint-plugin-perfectionist";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const perfectionistConfig: Linter.Config = {
+export const perfectionistConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     perfectionist: perfectionistPlugin,
@@ -52,4 +52,4 @@ export const perfectionistConfig: Linter.Config = {
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
   },
-};
+});

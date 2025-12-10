@@ -1,8 +1,8 @@
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const typescriptConfig: Linter.Config = {
+export const typescriptConfig = defineConfig({
   files: ["**/*.{ts,tsx}"],
   languageOptions: {
     parser: typescriptParser,
@@ -197,4 +197,4 @@ export const typescriptConfig: Linter.Config = {
      */
     "@typescript-eslint/no-unused-private-class-members": "off",
   },
-};
+});

@@ -1,7 +1,7 @@
 import nextPlugin from "@next/eslint-plugin-next";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const nextConfig: Linter.Config = {
+export const nextConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     "@next/next": nextPlugin,
@@ -29,4 +29,4 @@ export const nextConfig: Linter.Config = {
     "@next/next/no-typos": "error",
     "@next/next/no-unwanted-polyfillio": "error",
   },
-};
+});

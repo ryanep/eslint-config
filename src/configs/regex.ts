@@ -1,7 +1,7 @@
 import regexpPlugin from "eslint-plugin-regexp";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const regexConfig: Linter.Config = {
+export const regexConfig = defineConfig({
   plugins: {
     regexp: regexpPlugin,
   },
@@ -99,4 +99,4 @@ export const regexConfig: Linter.Config = {
     "regexp/unicode-property": "error",
     "regexp/use-ignore-case": "error",
   },
-};
+});

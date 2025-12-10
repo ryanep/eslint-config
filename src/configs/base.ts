@@ -1,7 +1,7 @@
+import { defineConfig } from "eslint/config";
 import globals from "globals";
-import type { Linter } from "eslint";
 
-export const baseConfig: Linter.Config = {
+export const baseConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   languageOptions: {
     globals: {
@@ -12,4 +12,4 @@ export const baseConfig: Linter.Config = {
   linterOptions: {
     reportUnusedDisableDirectives: "error",
   },
-};
+});

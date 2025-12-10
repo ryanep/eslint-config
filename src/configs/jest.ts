@@ -1,8 +1,8 @@
 import jestPlugin from "eslint-plugin-jest";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
-import type { Linter } from "eslint";
 
-export const jestConfig: Linter.Config = {
+export const jestConfig = defineConfig({
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
   languageOptions: {
     globals: globals.jest,
@@ -81,4 +81,4 @@ export const jestConfig: Linter.Config = {
       version: "latest",
     },
   },
-};
+});

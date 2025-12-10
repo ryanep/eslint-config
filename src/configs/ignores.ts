@@ -1,6 +1,6 @@
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const ignoresConfig: Linter.Config = {
+export const ignoresConfig = defineConfig({
   ignores: [
     "**/.cache",
     "**/.changeset",
@@ -22,4 +22,4 @@ export const ignoresConfig: Linter.Config = {
     "**/public",
     "**/yarn.lock",
   ],
-};
+});

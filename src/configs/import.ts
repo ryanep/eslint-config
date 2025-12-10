@@ -1,8 +1,8 @@
 import { fixupPluginRules } from "@eslint/compat";
 import importPlugin from "eslint-plugin-import";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const importConfig: Linter.Config[] = [
+export const importConfig = defineConfig([
   {
     plugins: {
       import: fixupPluginRules(importPlugin),
@@ -37,6 +37,7 @@ export const importConfig: Linter.Config[] = [
       "import/consistent-type-specifier-style": "off",
       "import/default": "off",
       "import/dynamic-import-chunkname": "off",
+      "import/enforce-node-protocol-usage": "off",
       "import/exports-last": "off",
       "import/first": "off",
       "import/group-exports": "off",
@@ -98,4 +99,4 @@ export const importConfig: Linter.Config[] = [
       "import/no-default-export": "off",
     },
   },
-];
+]);

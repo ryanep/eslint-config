@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import eslintUnsafe from "eslint/use-at-your-own-risk";
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
-const configPath = "./src";
+const configPath = "./src/configs";
 
 const main = async () => {
   console.time();
@@ -17,25 +17,29 @@ const main = async () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     const eslintConfig = (await import(
       `../${configPath}/${configFile}`
-    )) as Record<string, Linter.Config>;
+    )) as Record<string, Config[]>;
 
     const [configKey] = Object.keys(eslintConfig);
-    const config = eslintConfig[configKey];
+    const configs = eslintConfig[configKey];
 
-    const pluginNames = config.plugins ? Object.keys(config.plugins) : [];
-    const rules = config.rules ? Object.keys(config.rules) : [];
+    for (const config of configs) {
+      const pluginNames = config.plugins ? Object.keys(config.plugins) : [];
+      const rules = config.rules ? Object.keys(config.rules) : [];
 
-    for (const rule of rules) {
-      setRules.add(rule);
-    }
+      for (const rule of rules) {
+        setRules.add(rule);
+      }
 
-    for (const pluginName of pluginNames) {
-      const pluginRules = Object.keys(config.plugins?.[pluginName].rules ?? {});
+      for (const pluginName of pluginNames) {
+        const pluginRules = Object.keys(
+          config.plugins?.[pluginName].rules ?? {}
+        );
 
-      for (const pluginRule of pluginRules) {
-        const fullRuleName = `${pluginName}/${pluginRule}`;
+        for (const pluginRule of pluginRules) {
+          const fullRuleName = `${pluginName}/${pluginRule}`;
 
-        allRules.add(fullRuleName);
+          allRules.add(fullRuleName);
+        }
       }
     }
   }

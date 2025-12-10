@@ -1,7 +1,7 @@
 import unicornPlugin from "eslint-plugin-unicorn";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const unicornConfig: Linter.Config = {
+export const unicornConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     unicorn: unicornPlugin,
@@ -157,4 +157,4 @@ export const unicornConfig: Linter.Config = {
     "unicorn/require-module-attributes": "off",
     "unicorn/require-module-specifiers": "off",
   },
-};
+});

@@ -1,7 +1,7 @@
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const jsxA11yConfig: Linter.Config = {
+export const jsxA11yConfig = defineConfig({
   files: ["**/*.{jsx,tsx}"],
   plugins: {
     "jsx-a11y": jsxA11yPlugin,
@@ -133,4 +133,4 @@ export const jsxA11yConfig: Linter.Config = {
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/no-onchange": "off",
   },
-};
+});

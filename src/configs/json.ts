@@ -1,8 +1,8 @@
 import jsonPlugin from "eslint-plugin-jsonc";
+import { defineConfig } from "eslint/config";
 import jsonParser from "jsonc-eslint-parser";
-import type { Linter } from "eslint";
 
-export const jsonConfig: Linter.Config = {
+export const jsonConfig = defineConfig({
   files: ["*.json", "*.json5", "*.jsonc"],
   languageOptions: {
     parser: jsonParser,
@@ -72,4 +72,4 @@ export const jsonConfig: Linter.Config = {
     "jsonc/valid-json-number": "error",
     "jsonc/vue-custom-block/no-parsing-error": "error",
   },
-};
+});

@@ -1,8 +1,8 @@
 import { fixupPluginRules } from "@eslint/compat";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const testingLibraryConfig: Linter.Config = {
+export const testingLibraryConfig = defineConfig({
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
   plugins: {
     "testing-library": fixupPluginRules(testingLibraryPlugin),
@@ -37,4 +37,4 @@ export const testingLibraryConfig: Linter.Config = {
     "testing-library/prefer-user-event": "error",
     "testing-library/render-result-naming-convention": "error",
   },
-};
+});

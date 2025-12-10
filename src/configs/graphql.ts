@@ -1,7 +1,7 @@
 import * as graphqlPlugin from "@graphql-eslint/eslint-plugin";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const graphqlConfig: Linter.Config = {
+export const graphqlConfig = defineConfig({
   files: ["**/*.{graphql,gql}"],
   languageOptions: {
     parser: graphqlPlugin,
@@ -117,4 +117,4 @@ export const graphqlConfig: Linter.Config = {
     "@graphql-eslint/variables-are-input-types": "error",
     "@graphql-eslint/variables-in-allowed-position": "error",
   },
-};
+});

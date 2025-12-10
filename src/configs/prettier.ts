@@ -1,7 +1,7 @@
 import prettierPlugin from "eslint-plugin-prettier";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const prettierConfig: Linter.Config = {
+export const prettierConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     prettier: prettierPlugin,
@@ -9,4 +9,4 @@ export const prettierConfig: Linter.Config = {
   rules: {
     "prettier/prettier": "warn",
   },
-};
+});

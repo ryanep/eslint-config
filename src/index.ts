@@ -1,3 +1,4 @@
+import { type Config, defineConfig } from "eslint/config";
 import { baseConfig } from "./configs/base";
 import { builtInConfig } from "./configs/built-in";
 import { graphqlConfig } from "./configs/graphql";
@@ -17,49 +18,51 @@ import { testingLibraryConfig } from "./configs/testing-library";
 import { typescriptConfig } from "./configs/typescript";
 import { unicornConfig } from "./configs/unicorn";
 import { yamlConfig } from "./configs/yaml";
-import type { Linter } from "eslint";
 
 interface CreateConfigOptions {
-  isGraphql?: boolean;
-  isNext?: boolean;
-  isTailwind?: boolean;
+  /**
+   * An array of optional features to enable for the configuration.
+   */
+  features?: Feature[];
 }
 
-export const createConfig = ({
-  isGraphql = true,
-  isNext = true,
-  isTailwind = true,
-}: CreateConfigOptions = {}): Linter.Config[] => {
-  const config = [
-    baseConfig,
-    builtInConfig,
-    ignoresConfig,
-    ...importConfig,
-    jestConfig,
-    jsonConfig,
-    jsxA11yConfig,
-    perfectionistConfig,
-    prettierConfig,
-    reactConfig,
-    reactHooksConfig,
-    regexConfig,
-    testingLibraryConfig,
-    typescriptConfig,
-    unicornConfig,
-    yamlConfig,
-  ];
+type Feature =
+  | "graphql"
+  | "jest"
+  | "next"
+  | "react"
+  | "tailwind"
+  | "testing-library";
 
-  if (isGraphql) {
-    config.push(graphqlConfig);
-  }
+const featureConfigMap: Record<Feature, Config[][]> = {
+  "graphql": [graphqlConfig],
+  "jest": [jestConfig],
+  "next": [nextConfig],
+  "react": [jsxA11yConfig, reactConfig, reactHooksConfig],
+  "tailwind": [tailwindConfig],
+  "testing-library": [testingLibraryConfig],
+};
 
-  if (isNext) {
-    config.push(nextConfig);
-  }
+const baseConfigs = [
+  baseConfig,
+  builtInConfig,
+  ignoresConfig,
+  jsonConfig,
+  perfectionistConfig,
+  prettierConfig,
+  regexConfig,
+  typescriptConfig,
+  unicornConfig,
+  yamlConfig,
+  ...importConfig,
+];
 
-  if (isTailwind) {
-    config.push(tailwindConfig);
-  }
+export const createConfig = ({ features = [] }: CreateConfigOptions = {}) => {
+  const featureConfigs = features.flatMap(
+    (feature) => featureConfigMap[feature]
+  );
+
+  const config = defineConfig(baseConfigs, featureConfigs);
 
   return config;
 };

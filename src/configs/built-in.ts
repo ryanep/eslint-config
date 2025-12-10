@@ -1,6 +1,6 @@
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const builtInConfig: Linter.Config = {
+export const builtInConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   rules: {
     "constructor-super": "error",
@@ -285,4 +285,4 @@ export const builtInConfig: Linter.Config = {
     "wrap-regex": "off",
     "yield-star-spacing": "off",
   },
-};
+});

@@ -1,8 +1,8 @@
 import reactPlugin from "eslint-plugin-react";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
-import type { Linter } from "eslint";
 
-export const reactConfig: Linter.Config = {
+export const reactConfig = defineConfig({
   files: ["**/*.{jsx,tsx}"],
   languageOptions: {
     globals: globals.browser,
@@ -210,4 +210,4 @@ export const reactConfig: Linter.Config = {
       version: "detect",
     },
   },
-};
+});

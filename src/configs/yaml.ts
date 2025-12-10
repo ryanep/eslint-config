@@ -1,8 +1,8 @@
 import yamlPlugin from "eslint-plugin-yml";
+import { defineConfig } from "eslint/config";
 import yamlParser from "yaml-eslint-parser";
-import type { Linter } from "eslint";
 
-export const yamlConfig: Linter.Config = {
+export const yamlConfig = defineConfig({
   files: ["**/*.{yml,yaml}"],
   languageOptions: {
     parser: yamlParser,
@@ -49,4 +49,4 @@ export const yamlConfig: Linter.Config = {
     "yml/spaced-comment": "error",
     "yml/vue-custom-block/no-parsing-error": "error",
   },
-};
+});

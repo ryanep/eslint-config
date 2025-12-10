@@ -1,7 +1,7 @@
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const reactHooksConfig: Linter.Config = {
+export const reactHooksConfig = defineConfig({
   files: ["**/*.{jsx,tsx}"],
   plugins: {
     "react-hooks": reactHooksPlugin,
@@ -41,4 +41,4 @@ export const reactHooksConfig: Linter.Config = {
     "react-hooks/use-memo": "off",
     "react-hooks/void-use-memo": "off",
   },
-};
+});

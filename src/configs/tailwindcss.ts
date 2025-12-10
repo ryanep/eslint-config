@@ -1,7 +1,7 @@
 import tailwindPlugin from "eslint-plugin-tailwindcss";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export const tailwindConfig: Linter.Config = {
+export const tailwindConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
     tailwindcss: tailwindPlugin,
@@ -16,4 +16,4 @@ export const tailwindConfig: Linter.Config = {
     "tailwindcss/no-custom-classname": "error",
     "tailwindcss/no-unnecessary-arbitrary-value": "error",
   },
-};
+});
