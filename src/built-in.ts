@@ -257,6 +257,7 @@ export const builtInConfig: Linter.Config = {
     "prefer-rest-params": "off",
     "prefer-spread": "off",
     "prefer-template": "off",
+    "preserve-caught-error": "off",
     "quote-props": "off",
     "quotes": "off",
     "radix": "off",

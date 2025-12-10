@@ -73,6 +73,7 @@ export const jestConfig: Linter.Config = {
     "jest/valid-describe-callback": "error",
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
+    "jest/valid-mock-module-path": "error",
     "jest/valid-title": "error",
   },
   settings: {

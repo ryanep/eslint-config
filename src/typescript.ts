@@ -191,5 +191,10 @@ export const typescriptConfig: Linter.Config = {
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
+
+    /**
+     * New rules to review
+     */
+    "@typescript-eslint/no-unused-private-class-members": "off",
   },
 };

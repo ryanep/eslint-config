@@ -1,11 +1,10 @@
-import { fixupPluginRules } from "@eslint/compat";
 import nextPlugin from "@next/eslint-plugin-next";
 import type { Linter } from "eslint";
 
 export const nextConfig: Linter.Config = {
   files: ["**/*.[jt]s?(x)"],
   plugins: {
-    "@next/next": fixupPluginRules(nextPlugin),
+    "@next/next": nextPlugin,
   },
   rules: {
     "@next/next/google-font-display": "warn",

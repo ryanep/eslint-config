@@ -21,14 +21,6 @@ declare module "eslint-plugin-yml" {
   export = eslintPlugin;
 }
 
-declare module "@next/eslint-plugin-next" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "@typescript-eslint/eslint-plugin" {
   import type { ESLint } from "eslint";
 
@@ -45,14 +37,6 @@ declare module "eslint-plugin-import" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-jest" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
 declare module "eslint-plugin-jsonc" {
   import type { ESLint } from "eslint";
 
@@ -62,30 +46,6 @@ declare module "eslint-plugin-jsonc" {
 }
 
 declare module "eslint-plugin-react-hooks" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-react" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-testing-library" {
-  import type { ESLint } from "eslint";
-
-  declare const eslintPlugin: ESLint.Plugin;
-
-  export = eslintPlugin;
-}
-
-declare module "eslint-plugin-perfectionist" {
   import type { ESLint } from "eslint";
 
   declare const eslintPlugin: ESLint.Plugin;
