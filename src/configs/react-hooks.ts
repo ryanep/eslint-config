@@ -11,7 +11,7 @@ export const reactHooksConfig = defineConfig({
     "react-hooks/rules-of-hooks": "error",
 
     /**
-     * New rules to review
+     * New rules to review.
      */
     "react-hooks/automatic-effect-dependencies": "off",
     "react-hooks/capitalized-calls": "off",

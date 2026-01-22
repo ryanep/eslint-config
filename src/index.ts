@@ -5,6 +5,7 @@ import { graphqlConfig } from "./configs/graphql";
 import { ignoresConfig } from "./configs/ignores";
 import { importConfig } from "./configs/import";
 import { jestConfig } from "./configs/jest";
+import { jsdocConfig } from "./configs/jsdoc";
 import { jsonConfig } from "./configs/json";
 import { jsxA11yConfig } from "./configs/jsx-a11y";
 import { nextConfig } from "./configs/next";
@@ -47,6 +48,7 @@ const baseConfigs = [
   baseConfig,
   builtInConfig,
   ignoresConfig,
+  jsdocConfig,
   jsonConfig,
   perfectionistConfig,
   prettierConfig,
