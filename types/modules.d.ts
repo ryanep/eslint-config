@@ -50,3 +50,11 @@ declare module "eslint-plugin-react-hooks" {
 
   export = eslintPlugin;
 }
+
+declare module "@next/eslint-plugin-next" {
+  import type { ESLint } from "eslint";
+
+  declare const eslintPlugin: ESLint.Plugin;
+
+  export = eslintPlugin;
+}
