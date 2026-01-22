@@ -13,6 +13,7 @@ import { perfectionistConfig } from "./configs/perfectionist";
 import { prettierConfig } from "./configs/prettier";
 import { reactConfig } from "./configs/react";
 import { reactHooksConfig } from "./configs/react-hooks";
+import { reactYouMightNotneedAnEffectConfig } from "./configs/react-you-might-not-need-an-effect";
 import { regexConfig } from "./configs/regex";
 import { tailwindConfig } from "./configs/tailwindcss";
 import { testingLibraryConfig } from "./configs/testing-library";
@@ -39,7 +40,12 @@ const featureConfigMap: Record<Feature, Config[][]> = {
   "graphql": [graphqlConfig],
   "jest": [jestConfig],
   "next": [nextConfig],
-  "react": [jsxA11yConfig, reactConfig, reactHooksConfig],
+  "react": [
+    jsxA11yConfig,
+    reactConfig,
+    reactHooksConfig,
+    reactYouMightNotneedAnEffectConfig,
+  ],
   "tailwind": [tailwindConfig],
   "testing-library": [testingLibraryConfig],
 };
