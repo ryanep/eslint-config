@@ -1,6 +1,6 @@
 import yamlPlugin from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
-import yamlParser from "yaml-eslint-parser";
+import * as yamlParser from "yaml-eslint-parser";
 
 export const yamlConfig = defineConfig({
   files: ["**/*.{yml,yaml}"],

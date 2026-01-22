@@ -191,10 +191,9 @@ export const typescriptConfig = defineConfig({
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
-
-    /**
-     * New rules to review
-     */
+    // TODO: Review new rules
     "@typescript-eslint/no-unused-private-class-members": "off",
+    "@typescript-eslint/no-useless-default-assignment": "off",
+    "@typescript-eslint/strict-void-return": "off",
   },
 });

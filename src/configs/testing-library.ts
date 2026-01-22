@@ -1,11 +1,10 @@
-import { fixupPluginRules } from "@eslint/compat";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { defineConfig } from "eslint/config";
 
 export const testingLibraryConfig = defineConfig({
   files: ["**/__mocks__/**/*", "**/*.{spec,test}.{js,cjs,mjs,jsx,ts,tsx}"],
   plugins: {
-    "testing-library": fixupPluginRules(testingLibraryPlugin),
+    "testing-library": testingLibraryPlugin,
   },
   rules: {
     "testing-library/await-async-events": "error",
@@ -36,5 +35,7 @@ export const testingLibraryConfig = defineConfig({
     "testing-library/prefer-screen-queries": "error",
     "testing-library/prefer-user-event": "error",
     "testing-library/render-result-naming-convention": "error",
+    // TODO: Review new rules
+    "testing-library/prefer-user-event-setup": "off",
   },
 });

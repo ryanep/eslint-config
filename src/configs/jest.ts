@@ -75,6 +75,14 @@ export const jestConfig = defineConfig({
     "jest/valid-expect-in-promise": "error",
     "jest/valid-mock-module-path": "error",
     "jest/valid-title": "error",
+    // TODO: Review new rules
+    "jest/no-error-equal": "off",
+    "jest/no-unnecessary-assertion": "off",
+    "jest/no-unneeded-async-expect-function": "off",
+    "jest/prefer-mock-return-shorthand": "off",
+    "jest/prefer-to-have-been-called": "off",
+    "jest/prefer-to-have-been-called-times": "off",
+    "jest/valid-expect-with-promise": "off",
   },
   settings: {
     jest: {
