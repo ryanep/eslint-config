@@ -5,6 +5,10 @@
   "keywords": [
     "eslint-config"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanep/eslint-config"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {

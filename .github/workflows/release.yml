@@ -15,9 +15,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 24.14.0
+          registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: npm clean-install
       - name: Build rule configuration files
@@ -26,7 +27,7 @@ jobs:
         run: npm run lint
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         name: Release
         run: npm run release
 on: workflow_dispatch
