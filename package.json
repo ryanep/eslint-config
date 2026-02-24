@@ -25,6 +25,7 @@
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "precommit": "lint-staged",
+    "prepare": "husky",
     "release": "semantic-release",
     "scan": "tsx ./scripts/scan",
     "typecheck": "tsc --noEmit"
