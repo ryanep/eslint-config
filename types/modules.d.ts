@@ -19,7 +19,7 @@ declare module "eslint-plugin-yml" {
   export = eslintPlugin;
 }
 
-declare module "@typescript-eslint/eslint-plugin" {
+declare module "eslint-plugin-import-x" {
   import type { ESLint } from "eslint";
 
   declare const eslintPlugin: ESLint.Plugin;
@@ -27,7 +27,7 @@ declare module "@typescript-eslint/eslint-plugin" {
   export = eslintPlugin;
 }
 
-declare module "eslint-plugin-import" {
+declare module "@typescript-eslint/eslint-plugin" {
   import type { ESLint } from "eslint";
 
   declare const eslintPlugin: ESLint.Plugin;
