@@ -44,7 +44,16 @@ const main = async () => {
     }
   }
 
-  console.log("Total rules:", allRules.size, "Set rules:", setRules.size);
+  console.table([
+    {
+      Count: allRules.size,
+      Metric: "Total rules",
+    },
+    {
+      Count: setRules.size,
+      Metric: "Set rules",
+    },
+  ]);
 
   const unsetRules = [...allRules].filter(
     (rule) => ![...setRules].includes(rule)
@@ -55,8 +64,19 @@ const main = async () => {
   );
 
   if (unsetRules.length > 0 || invalidRules.length > 0) {
-    console.error("Unset rules:", unsetRules);
-    console.error("Invalid rules:", invalidRules);
+    if (unsetRules.length > 0) {
+      console.error("Unset rules");
+      console.table(
+        unsetRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
+      );
+    }
+
+    if (invalidRules.length > 0) {
+      console.error("Invalid rules");
+      console.table(
+        invalidRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
+      );
+    }
 
     console.timeEnd();
     throw new Error("Unset or invalid rules found.");
