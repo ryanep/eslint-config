@@ -51,6 +51,7 @@ export const perfectionistConfig = defineConfig({
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
     // TODO: Review new rules
+    "perfectionist/sort-arrays": "off",
     "perfectionist/sort-export-attributes": "off",
     "perfectionist/sort-import-attributes": "off",
   },

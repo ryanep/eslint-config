@@ -8,18 +8,18 @@ export const reactHooksConfig = defineConfig({
   },
   rules: {
     "react-hooks/exhaustive-deps": "error",
+    "react-hooks/exhaustive-effect-dependencies": "error",
+    "react-hooks/memo-dependencies": "error",
     "react-hooks/rules-of-hooks": "error",
 
     /**
      * New rules to review.
      */
-    "react-hooks/automatic-effect-dependencies": "off",
     "react-hooks/capitalized-calls": "off",
     "react-hooks/component-hook-factories": "off",
     "react-hooks/config": "off",
     "react-hooks/error-boundaries": "off",
     "react-hooks/fbt": "off",
-    "react-hooks/fire": "off",
     "react-hooks/gating": "off",
     "react-hooks/globals": "off",
     "react-hooks/hooks": "off",
