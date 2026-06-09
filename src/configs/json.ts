@@ -1,6 +1,6 @@
 import jsonPlugin from "eslint-plugin-jsonc";
 import { defineConfig } from "eslint/config";
-import jsonParser from "jsonc-eslint-parser";
+import * as jsonParser from "jsonc-eslint-parser";
 
 export const jsonConfig = defineConfig({
   files: ["*.json", "*.json5", "*.jsonc"],

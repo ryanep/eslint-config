@@ -1,10 +1,11 @@
+import { fixupPluginRules } from "@eslint/compat";
 import nextPlugin from "@next/eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 
 export const nextConfig = defineConfig({
   files: ["**/*.[jt]s?(x)"],
   plugins: {
-    "@next/next": nextPlugin,
+    "@next/next": fixupPluginRules(nextPlugin),
   },
   rules: {
     "@next/next/google-font-display": "warn",

@@ -1,3 +1,4 @@
+import { fixupPluginRules } from "@eslint/compat";
 import reactPlugin from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
@@ -13,7 +14,7 @@ export const reactConfig = defineConfig({
     },
   },
   plugins: {
-    react: reactPlugin,
+    react: fixupPluginRules(reactPlugin),
   },
   rules: {
     "react/boolean-prop-naming": "error",

@@ -1,10 +1,11 @@
+import { fixupPluginRules } from "@eslint/compat";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import { defineConfig } from "eslint/config";
 
 export const jsxA11yConfig = defineConfig({
   files: ["**/*.{jsx,tsx}"],
   plugins: {
-    "jsx-a11y": jsxA11yPlugin,
+    "jsx-a11y": fixupPluginRules(jsxA11yPlugin),
   },
   rules: {
     "jsx-a11y/alt-text": "error",
