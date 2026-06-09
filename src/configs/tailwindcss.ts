@@ -16,4 +16,9 @@ export const tailwindConfig = defineConfig({
     "tailwindcss/no-custom-classname": "error",
     "tailwindcss/no-unnecessary-arbitrary-value": "error",
   },
+  settings: {
+    tailwindcss: {
+      config: {},
+    },
+  },
 });

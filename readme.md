@@ -24,6 +24,18 @@ export const eslintConfig = createConfig();
 export default eslintConfig;
 ```
 
+Enable optional features by passing the relevant flag:
+
+```javascript
+import { createConfig } from "@ryanep/eslint-config";
+
+export const eslintConfig = createConfig({
+  features: ["tailwind", "react"],
+});
+
+export default eslintConfig;
+```
+
 ## License
 
 Licensed under the MIT license.
