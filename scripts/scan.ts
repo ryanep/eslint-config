@@ -4,14 +4,33 @@ import type { Config } from "eslint/config";
 
 const configPath = "./src/configs";
 
+interface RuleMeta {
+  deprecated?: { message?: string; url?: string } | boolean;
+  replacedBy?: (
+    | { plugin?: { name?: string }; rule?: { name?: string } }
+    | string
+  )[];
+}
+
+interface RuleModule {
+  meta?: RuleMeta;
+}
+
 const main = async () => {
   console.time();
 
   const configFiles = await fs.readdir(configPath);
 
-  const builtinRules = eslintUnsafe.builtinRules.keys();
-  const allRules = new Set<string>(builtinRules);
+  const builtinRuleMap = eslintUnsafe.builtinRules;
+  const allRules = new Set<string>();
   const setRules = new Set<string>();
+  const ruleModuleMap = new Map<string, RuleModule>();
+
+  for (const [name, rule] of builtinRuleMap) {
+    allRules.add(name);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+    ruleModuleMap.set(name, rule as RuleModule);
+  }
 
   for (const configFile of configFiles) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
@@ -31,14 +50,16 @@ const main = async () => {
       }
 
       for (const pluginName of pluginNames) {
-        const pluginRules = Object.keys(
-          config.plugins?.[pluginName].rules ?? {}
-        );
+        const plugin = config.plugins?.[pluginName];
 
-        for (const pluginRule of pluginRules) {
-          const fullRuleName = `${pluginName}/${pluginRule}`;
+        if (plugin?.rules) {
+          for (const [pluginRule, ruleModule] of Object.entries(plugin.rules)) {
+            const fullRuleName = `${pluginName}/${pluginRule}`;
 
-          allRules.add(fullRuleName);
+            allRules.add(fullRuleName);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+            ruleModuleMap.set(fullRuleName, ruleModule as RuleModule);
+          }
         }
       }
     }
@@ -55,31 +76,68 @@ const main = async () => {
     },
   ]);
 
-  const unsetRules = [...allRules].filter(
-    (rule) => ![...setRules].includes(rule)
-  );
+  const unsetRules = [...allRules].filter((rule) => !setRules.has(rule));
 
-  const invalidRules = [...setRules].filter(
-    (rule) => ![...allRules].includes(rule)
-  );
+  const invalidRules = [...setRules].filter((rule) => !allRules.has(rule));
 
-  if (unsetRules.length > 0 || invalidRules.length > 0) {
-    if (unsetRules.length > 0) {
-      console.error("Unset rules");
+  const deprecatedSetRules = [...setRules].filter((rule) => {
+    const module = ruleModuleMap.get(rule);
+    return module?.meta?.deprecated;
+  });
+
+  if (
+    unsetRules.length > 0 ||
+    invalidRules.length > 0 ||
+    deprecatedSetRules.length > 0
+  ) {
+    if (deprecatedSetRules.length > 0) {
+      console.error("Deprecated rules (non-fatal)");
       console.table(
-        unsetRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
+        deprecatedSetRules.map((rule, index) => {
+          const module = ruleModuleMap.get(rule);
+          let replacement = "";
+
+          if (module?.meta?.replacedBy) {
+            const names = (
+              Array.isArray(module.meta.replacedBy)
+                ? module.meta.replacedBy
+                : []
+            )
+              .map((r) =>
+                typeof r === "string"
+                  ? r
+                  : (r.rule?.name ?? r.plugin?.name ?? "")
+              )
+              .filter(Boolean);
+
+            if (names.length > 0) {
+              replacement = ` (replaced by: ${names.join(", ")})`;
+            }
+          }
+
+          return { Index: index + 1, Rule: rule + replacement };
+        })
       );
     }
 
-    if (invalidRules.length > 0) {
-      console.error("Invalid rules");
-      console.table(
-        invalidRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
-      );
-    }
+    if (unsetRules.length > 0 || invalidRules.length > 0) {
+      if (unsetRules.length > 0) {
+        console.error("Unset rules");
+        console.table(
+          unsetRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
+        );
+      }
 
-    console.timeEnd();
-    throw new Error("Unset or invalid rules found.");
+      if (invalidRules.length > 0) {
+        console.error("Invalid rules");
+        console.table(
+          invalidRules.map((rule, index) => ({ Index: index + 1, Rule: rule }))
+        );
+      }
+
+      console.timeEnd();
+      throw new Error("Unset or invalid rules found.");
+    }
   }
 
   console.log("No unset rules.");
