@@ -25,6 +25,8 @@ jobs:
         run: npm run build
       - name: Lint
         run: npm run lint
+      - name: Scan
+        run: npm run scan
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
