@@ -95,6 +95,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENCODE_AGENT: ${{ inputs.agent || vars.OPENCODE_ESLINT_UPGRADE_AGENT || 'build' }}
           OPENCODE_DISABLE_AUTOUPDATE: true
+          OPENCODE_ESLINT_PACKAGES: ${{ steps.outdated.outputs.packages }}
           OPENCODE_MODEL: ${{ inputs.model || vars.OPENCODE_ESLINT_UPGRADE_MODEL || 'deepseek/deepseek-v4-pro' }}
         if: steps.outdated.outputs.has_updates == 'true'
         name: Run ESLint upgrade agent
@@ -103,7 +104,7 @@ jobs:
             --agent "$OPENCODE_AGENT" \
             --model "$OPENCODE_MODEL" \
             --dangerously-skip-permissions \
-            "Use the eslint-upgrade skill to upgrade ESLint-related dependencies, reconcile missing, invalid, and deprecated rules, verify the package, and open a pull request. Prefer non-breaking changes where possible. You are already on a dedicated feature branch; do not commit directly to main or switch back to main. Create the pull request from the current branch."
+            "Use the eslint-upgrade skill for the selected package allowlist in OPENCODE_ESLINT_PACKAGES."
       - if: always() && steps.outdated.outputs.has_updates == 'true'
         name: Report OpenCode usage
         run: |

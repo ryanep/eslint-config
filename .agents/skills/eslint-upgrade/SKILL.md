@@ -26,11 +26,33 @@ Prefer non-breaking upgrades and rule changes where possible. If a breaking depe
 - Keep `package-lock.json` in sync with `package.json`.
 - This repository's `eslint.config.js` imports from `lib`, so build before linting.
 
+## Dependency Scope
+
+Only update packages that are directly related to ESLint rule discovery or ESLint config behavior.
+
+Allowed package scopes and names:
+
+- `eslint`
+- packages starting with `@eslint/`
+- packages starting with `@typescript-eslint/`
+- `@graphql-eslint/eslint-plugin`
+- `@next/eslint-plugin-next`
+- packages starting with `eslint-`
+- packages whose names contain `eslint` and `parser`
+
+Do not update unrelated packages, even if they are outdated. This includes general runtime, build, release, and type packages such as `@types/node`, `typescript`, `tsx`, `tsup`, `semantic-release`, and `prettier`.
+
+If the workflow provides an explicit package list, update only those packages. Do not add packages outside that list unless they are transitive lockfile changes required by npm to install the selected packages.
+
+Preserve existing `package.json` semver range style for direct dependencies. If a package currently uses a `^` range, the upgraded entry must still use `^`; do not replace it with an exact version. Use targeted npm commands with `--save-prefix="^"` when needed, then inspect `package.json` before committing.
+
+When running in a pipeline, the workflow may pass the selected package list in the prompt or environment, for example as `OPENCODE_ESLINT_PACKAGES`. Treat that list as an allowlist. Do not update direct dependencies outside it.
+
 ## Workflow
 
 1. Check the working tree with `git status`.
 2. Inspect ESLint-related dependencies in `package.json`.
-3. Upgrade ESLint-related dependencies using npm so `package-lock.json` is updated, preferring non-breaking semver-compatible updates unless a major upgrade is explicitly required.
+3. Upgrade only the selected ESLint-related dependencies using targeted npm commands so `package-lock.json` is updated, preserving existing semver range prefixes such as `^`, and preferring non-breaking semver-compatible updates unless a major upgrade is explicitly required.
 4. Run `npm run scan`.
 5. Resolve `Invalid rules`.
 6. Resolve `Unset rules`.
@@ -78,15 +100,47 @@ For deprecated rules:
 
 Create a pull request only after verification passes.
 
-The PR body should include:
+Use this PR body format:
 
-- Dependency upgrades.
-- Rules added.
-- Rules removed.
-- Rules replaced.
-- Deprecated rules left unresolved.
-- Potential breaking changes or stricter behavior, if any.
-- Verification checklist.
+```markdown
+## Summary
+
+- Upgrade ESLint-related dependencies only.
+- Reconcile rule changes reported by `npm run scan`.
+
+## Dependency Updates
+
+| Package | From | To | Type |
+| --- | --- | --- | --- |
+| `package-name` | `old` | `new` | patch/minor/major |
+
+## Rule Changes
+
+| Rule | Change | Reason |
+| --- | --- | --- |
+| `plugin/rule-name` | added as `"off"` / removed / replaced | unset / invalid / deprecated |
+
+## Deprecated Rules
+
+- Resolved: <count>, with replacements where scanner metadata was clear.
+- Left unchanged: <count>, because no safe replacement was identified.
+- Notes: include only notable rules, not the full scanner table.
+
+## Compatibility
+
+- Breaking changes: none / describe unavoidable breaking or stricter behavior.
+- Semver ranges preserved: yes / no, with explanation.
+- Non-ESLint direct dependency changes: none / explain why required.
+
+## Verification
+
+- [x] `npm run scan`
+- [x] `npm run typecheck`
+- [x] `npm run build`
+- [x] `npm run lint`
+```
+
+Keep the PR body concise. Do not paste the full deprecated-rule scanner table unless it is short and directly useful.
 
 Do not create a pull request if:
 
@@ -98,6 +152,9 @@ Do not create a pull request if:
 ## Constraints
 
 - Do not manually edit generated `lib`.
+- Do not run broad dependency update commands such as `npm update`, `npm install` with no package arguments, or package manager commands that update unrelated dependencies.
+- Do not commit unrelated package updates. If unrelated direct dependencies change, revert those package entries before continuing.
+- Do not pin direct dependency versions that previously used a range. Preserve `^` ranges in `package.json` unless the user explicitly requests exact versions.
 - Keep changes minimal.
 - Preserve existing formatting and grouping.
 - Prefer explicit rule entries over generated abstractions.
@@ -105,6 +162,7 @@ Do not create a pull request if:
 - Do not force-push.
 - Do not amend commits unless explicitly requested.
 - Do not commit, push, or create a pull request until scan, typecheck, build, and lint pass.
+- If already on a dedicated feature branch, use the current branch for the commit and pull request. Do not switch back to `main`.
 
 ## Pipeline Behavior
 
@@ -118,13 +176,30 @@ Do not create a pull request if:
 
 ## Final Report
 
-End with a concise report containing:
+End with this concise format:
 
-- Dependency upgrades.
-- Rules added.
-- Rules removed.
-- Rules replaced.
-- Deprecated rules left unresolved.
-- Potential breaking changes or stricter behavior, if any.
-- Verification results.
-- Pull request URL, if created.
+```markdown
+## Result
+
+- PR: <url or not created>
+- Status: completed / blocked / failed
+
+## Changes
+
+- Dependencies: <count> updated (`pkg old -> new`, ...)
+- Rules: <added> added, <removed> removed, <replaced> replaced, <unchanged deprecated> deprecated left unchanged
+- Compatibility: no breaking changes / <short note>
+
+## Verification
+
+- `npm run scan`: pass/fail
+- `npm run typecheck`: pass/fail
+- `npm run build`: pass/fail
+- `npm run lint`: pass/fail
+
+## Follow-Up
+
+- <only include if human review or manual action is needed>
+```
+
+Avoid long raw command output in the final report. Summarize counts and link to the pull request for details.
