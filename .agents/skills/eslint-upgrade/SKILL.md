@@ -12,7 +12,7 @@ metadata:
 
 Use this skill when upgrading ESLint, ESLint plugins, ESLint parsers, or related rule packages in this repository.
 
-The workflow updates dependencies, runs the rule scanner, resolves missing or invalid rule entries, verifies the package, commits the changes, pushes a branch, and opens a pull request.
+The workflow updates dependencies, runs the rule scanner, resolves missing or invalid rule entries, verifies the package, and prepares a pull request. In interactive use, the agent may commit, push, and open the pull request after verification. In pipeline prepare-only mode, the automation workflow handles commit, push, and pull request creation.
 
 Prefer non-breaking upgrades and rule changes where possible. If a breaking dependency major upgrade or stricter rule behavior is unavoidable, keep the change explicit and call it out in the pull request and final report.
 
@@ -59,17 +59,27 @@ When running in a pipeline, the workflow may pass the selected package list in t
 7. Handle deprecated rules when a clear replacement exists.
 8. Re-run `npm run scan`.
 9. Repeat until there are no unset or invalid rules.
-10. Run verification:
+10. Before verification, run quick checks:
+    - `git diff --stat`
+    - `git diff -- package.json`
+    - Confirm only allowlisted direct dependencies changed.
+    - Confirm existing `^` ranges remain `^` ranges.
+11. Run verification:
     - `npm run scan`
     - `npm run typecheck`
     - `npm run build`
     - `npm run lint`
-11. If verification passes and there are changes:
+12. If verification passes and there are changes, and this is not pipeline prepare-only mode:
     - Create a branch if needed.
     - Commit the dependency and rule updates.
     - Push the branch.
     - Create a pull request.
-12. If verification fails:
+13. If verification passes and this is pipeline prepare-only mode:
+    - Leave changes uncommitted.
+    - Do not push.
+    - Do not create a pull request.
+    - Provide the final report only.
+14. If verification fails:
     - Do not commit, push, or create a pull request.
     - Report the failing command and relevant output.
 
@@ -94,6 +104,7 @@ For deprecated rules:
 - Prefer replacement metadata from the scanner.
 - Do not invent replacements.
 - Avoid replacements that make behavior stricter unless the existing config already clearly prefers that behavior.
+- If a deprecated rule has a replacement that is already configured, move the deprecated rule to `"off"` instead of deleting it so the scan still counts it as intentionally configured.
 - If uncertain, leave the rule unchanged and report it.
 
 ## Pull Request Requirements
@@ -153,7 +164,9 @@ Do not create a pull request if:
 
 - Do not manually edit generated `lib`.
 - Do not run broad dependency update commands such as `npm update`, `npm install` with no package arguments, or package manager commands that update unrelated dependencies.
+- Use targeted npm commands for allowlisted packages, for example `npm install --save-prefix="^" <package>...`.
 - Do not commit unrelated package updates. If unrelated direct dependencies change, revert those package entries before continuing.
+- Do not use `npm install <package>@latest` if it would replace an existing range with an exact version.
 - Do not pin direct dependency versions that previously used a range. Preserve `^` ranges in `package.json` unless the user explicitly requests exact versions.
 - Keep changes minimal.
 - Preserve existing formatting and grouping.
@@ -162,6 +175,7 @@ Do not create a pull request if:
 - Do not force-push.
 - Do not amend commits unless explicitly requested.
 - Do not commit, push, or create a pull request until scan, typecheck, build, and lint pass.
+- In pipeline prepare-only mode, do not commit, push, or create a pull request at all; the workflow will do that after deterministic checks pass.
 - If already on a dedicated feature branch, use the current branch for the commit and pull request. Do not switch back to `main`.
 
 ## Pipeline Behavior
@@ -169,9 +183,12 @@ Do not create a pull request if:
 - Do not wait for user confirmation unless blocked by ambiguity that could cause incorrect changes.
 - Prefer safe defaults.
 - Prefer non-breaking updates and report any unavoidable breaking changes clearly.
-- Create a pull request only after verification passes.
+- Major upgrades are allowed only when they are part of the explicit package allowlist, and they must be called out in compatibility notes.
+- Create a pull request only after verification passes, unless pipeline prepare-only mode is active.
 - If GitHub CLI authentication is unavailable, stop after successful local verification and report that PR creation is blocked.
 - Fail clearly if `npm run scan`, `npm run typecheck`, `npm run build`, or `npm run lint` fails after attempted fixes.
+- Use `git diff --stat` for summaries. Only inspect full diffs for files that need validation.
+- Avoid long raw command output in logs and final reports.
 - Include enough final detail for a pipeline log to explain what changed and what still needs review.
 
 ## Final Report

@@ -42,12 +42,12 @@ jobs:
       - id: outdated
         name: Check outdated ESLint packages
         run: |
-          npm outdated --json > outdated.json || true
+          npm outdated --json > "$RUNNER_TEMP/outdated.json" || true
 
           node <<'NODE'
           const fs = require("node:fs");
 
-          const content = fs.readFileSync("outdated.json", "utf8").trim();
+          const content = fs.readFileSync(`${process.env.RUNNER_TEMP}/outdated.json`, "utf8").trim();
           const outdated = content ? JSON.parse(content) : {};
           const eslintPackagePattern = /^(eslint$|@eslint\/|@typescript-eslint\/|@graphql-eslint\/eslint-plugin$|@next\/eslint-plugin-next$|@types\/eslint-|eslint-|.*eslint.*parser.*)/;
           const eslintPackages = Object.keys(outdated).filter((name) =>
@@ -97,6 +97,7 @@ jobs:
           OPENCODE_DISABLE_AUTOUPDATE: true
           OPENCODE_ESLINT_PACKAGES: ${{ steps.outdated.outputs.packages }}
           OPENCODE_MODEL: ${{ inputs.model || vars.OPENCODE_ESLINT_UPGRADE_MODEL || 'deepseek/deepseek-v4-pro' }}
+          OPENCODE_PIPELINE_MODE: prepare-only
         if: steps.outdated.outputs.has_updates == 'true'
         name: Run ESLint upgrade agent
         run: |
@@ -104,7 +105,168 @@ jobs:
             --agent "$OPENCODE_AGENT" \
             --model "$OPENCODE_MODEL" \
             --dangerously-skip-permissions \
-            "Use the eslint-upgrade skill for the selected package allowlist in OPENCODE_ESLINT_PACKAGES."
+            "Use the eslint-upgrade skill. Package allowlist: $OPENCODE_ESLINT_PACKAGES. Pipeline mode: prepare changes only; do not commit, push, or create a pull request."
+      - id: changes
+        if: steps.outdated.outputs.has_updates == 'true'
+        name: Check prepared changes
+        run: |
+          if [ "$(git rev-list --count origin/main..HEAD)" != "0" ]; then
+            echo "OpenCode created commits in prepare-only mode." >&2
+            exit 1
+          fi
+
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "OpenCode made no changes. Skipping commit and pull request." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+      - env:
+          OPENCODE_ESLINT_PACKAGES: ${{ steps.outdated.outputs.packages }}
+        if: steps.changes.outputs.has_changes == 'true'
+        name: Validate changed files and packages
+        run: |
+          node <<'NODE'
+          const cp = require("node:child_process");
+          const fs = require("node:fs");
+
+          const allowlist = new Set(
+            (process.env.OPENCODE_ESLINT_PACKAGES ?? "")
+              .split(",")
+              .map((name) => name.trim())
+              .filter(Boolean),
+          );
+
+          const changedFiles = cp
+            .execSync("git diff --name-only", { encoding: "utf8" })
+            .trim()
+            .split("\n")
+            .filter(Boolean);
+
+          const allowedFilePatterns = [
+            /^package\.json$/,
+            /^package-lock\.json$/,
+            /^src\/configs\//,
+          ];
+
+          const disallowedFiles = changedFiles.filter(
+            (file) => !allowedFilePatterns.some((pattern) => pattern.test(file)),
+          );
+
+          if (disallowedFiles.length > 0) {
+            throw new Error(`Unexpected changed files: ${disallowedFiles.join(", ")}`);
+          }
+
+          const before = JSON.parse(cp.execSync("git show HEAD:package.json", { encoding: "utf8" }));
+          const after = JSON.parse(fs.readFileSync("package.json", "utf8"));
+          const sections = ["dependencies", "devDependencies", "overrides"];
+          const changedPackages = [];
+
+          for (const section of sections) {
+            const beforeSection = before[section] ?? {};
+            const afterSection = after[section] ?? {};
+            const packageNames = new Set([
+              ...Object.keys(beforeSection),
+              ...Object.keys(afterSection),
+            ]);
+
+            for (const name of packageNames) {
+              const beforeValue = beforeSection[name];
+              const afterValue = afterSection[name];
+
+              if (beforeValue === afterValue) continue;
+
+              changedPackages.push({ afterValue, beforeValue, name, section });
+            }
+          }
+
+          const disallowedPackages = changedPackages.filter(
+            ({ name }) => !allowlist.has(name),
+          );
+
+          if (disallowedPackages.length > 0) {
+            throw new Error(
+              `Unexpected direct dependency changes: ${disallowedPackages
+                .map(({ name, section }) => `${section}.${name}`)
+                .join(", ")}`,
+            );
+          }
+
+          const rangeChanges = changedPackages.filter(
+            ({ afterValue, beforeValue }) =>
+              typeof beforeValue === "string" &&
+              typeof afterValue === "string" &&
+              beforeValue.startsWith("^") &&
+              !afterValue.startsWith("^"),
+          );
+
+          if (rangeChanges.length > 0) {
+            throw new Error(
+              `Semver range prefixes were not preserved: ${rangeChanges
+                .map(({ name }) => name)
+                .join(", ")}`,
+            );
+          }
+          NODE
+      - if: steps.changes.outputs.has_changes == 'true'
+        name: Verify prepared changes
+        run: |
+          npm run scan
+          npm run typecheck
+          npm run build
+          npm run lint
+      - if: steps.changes.outputs.has_changes == 'true'
+        name: Commit changes
+        run: |
+          git add package.json package-lock.json src/configs
+          git commit -m "chore: upgrade ESLint-related dependencies"
+      - if: steps.changes.outputs.has_changes == 'true'
+        name: Push branch
+        run: git push origin HEAD
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENCODE_ESLINT_PACKAGES: ${{ steps.outdated.outputs.packages }}
+        if: steps.changes.outputs.has_changes == 'true'
+        name: Create pull request
+        run: |
+          pr_body="$RUNNER_TEMP/eslint-upgrade-pr.md"
+
+          {
+            echo "## Summary"
+            echo
+            echo "- Upgrade ESLint-related dependencies only."
+            echo "- Reconcile rule changes reported by \`npm run scan\`."
+            echo
+            echo "## Dependency Updates"
+            echo
+            echo "Allowlist: \`$OPENCODE_ESLINT_PACKAGES\`"
+            echo
+            echo '```diff'
+            git diff HEAD^ HEAD -- package.json
+            echo '```'
+            echo
+            echo "## Changed Files"
+            echo
+            git diff --stat HEAD^ HEAD
+            echo
+            echo "## Compatibility"
+            echo
+            echo "- Semver ranges preserved: yes"
+            echo "- Non-ESLint direct dependency changes: none"
+            echo
+            echo "## Verification"
+            echo
+            echo "- [x] \`npm run scan\`"
+            echo "- [x] \`npm run typecheck\`"
+            echo "- [x] \`npm run build\`"
+            echo "- [x] \`npm run lint\`"
+          } > "$pr_body"
+
+          gh pr create \
+            --base main \
+            --body-file "$pr_body" \
+            --head "$(git branch --show-current)" \
+            --title "chore: upgrade ESLint-related dependencies"
       - if: always() && steps.outdated.outputs.has_updates == 'true'
         name: Report OpenCode usage
         run: |
