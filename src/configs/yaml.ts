@@ -48,5 +48,8 @@ export const yamlConfig = defineConfig({
     ],
     "yml/spaced-comment": "error",
     "yml/vue-custom-block/no-parsing-error": "error",
+
+    // TODO: Review new rules
+    "yml/no-trailing-spaces": "off",
   },
 });
