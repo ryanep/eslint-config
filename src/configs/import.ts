@@ -14,7 +14,9 @@ export const importConfig = defineConfig([
         {
           pattern: {
             css: "always",
+            js: "always",
             json: "always",
+            mjs: "always",
             scss: "always",
             svg: "always",
           },
