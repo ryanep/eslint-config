@@ -96,6 +96,7 @@ export const importConfig = defineConfig([
       "import-x": importPlugin,
     },
     rules: {
+      "import-x/extensions": "off",
       "import-x/no-default-export": "off",
     },
   },

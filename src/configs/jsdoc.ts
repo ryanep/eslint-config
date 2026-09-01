@@ -38,6 +38,7 @@ export const jsdocConfig = defineConfig({
     "jsdoc/no-restricted-syntax": "off",
     "jsdoc/no-types": "off",
     "jsdoc/no-undefined-types": "off",
+    "jsdoc/normalize-see-links": "off",
     "jsdoc/prefer-import-tag": "off",
     "jsdoc/reject-any-type": "off",
     "jsdoc/reject-function-type": "off",

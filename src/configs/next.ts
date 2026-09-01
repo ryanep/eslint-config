@@ -22,6 +22,7 @@ export const nextConfig = defineConfig({
     "@next/next/no-head-import-in-document": "error",
     "@next/next/no-html-link-for-pages": "warn",
     "@next/next/no-img-element": "warn",
+    "@next/next/no-location-assign-relative-destination": "off",
     "@next/next/no-page-custom-font": "warn",
     "@next/next/no-script-component-in-head": "error",
     "@next/next/no-styled-jsx-in-document": "warn",
